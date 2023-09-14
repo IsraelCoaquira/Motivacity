@@ -1,8 +1,34 @@
-import { View } from "react-native";
+import { View, Text, TextInput, SafeAreaView, ScrollView, StatusBar, StyleSheet } from "react-native";
+import React from 'react'
 
 export function Telaprogresso(){
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32}}>
-        </View>
-    )
-}
+        <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+      <View style= {{
+            height: 120,
+            position: 'absolute',
+            bottom: 500,
+            right: 32,
+            left: 32,
+            borderRadius: 16,
+            backgroundColor: '#b54545'
+        }}></View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    backgroundColor: '#ed7d31',
+    marginHorizontal: 0,
+  },
+  text: {
+    fontSize: 20,
+  },
+});
