@@ -1,31 +1,31 @@
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
 import useStorage from "../../hooks/useStorage";
+import { MMKV } from "react-native-mmkv";
 
 
 export function ModalAddTarefa({fecharModal}){
     const { saveItem } = useStorage();
+    const { nomeTarefa, setNomeTarefa} = useState()
+    const { prazoTarefa, setPrazoTarefa} = useState()
+    const { descTarefa, setDescTarefa} = useState()
     
-    async function salvarTarefa(){
-        await saveItem("@pass", password)
-        fecharModal();
+    function salvarTarefa(){
+        storage.set('user', JSON.stringify((nomeTarefa, prazoTarefa, descTarefa)));
     }
     return(
         <View style = {styles.container}> 
         <KeyboardAvoidingView>
             <View style = {styles.Quadradinho}>
                 <Text style = {styles.Titulo}>NOVA TAREFA</Text>
-                <Text style={styles.text}>Digite o nome da tarefa: </Text>
-                <TextInput style = {styles.Input}></TextInput>
-                <Text style={styles.text}>Digite o prazo final: </Text>
-                <TextInput style = {styles.Input}></TextInput>
-                <Text style={styles.text}>Digite uma descrição: </Text>
-                <TextInput style = {styles.Input}></TextInput>
+                <TextInput style = {styles.Input} placeholder="Nome da tarefa" onChangeText={setNomeTarefa}></TextInput>
+                <TextInput style = {styles.Input} placeholder="Prazo para tarefa" onChangeText={setNomeTarefa}></TextInput>
+                <TextInput style = {styles.Input} placeholder="Descrição tarefa" onChangeText={setNomeTarefa}></TextInput>
 
                 <View style = {styles.btnsArea}>
                     <TouchableOpacity style={styles.btn} onPress={fecharModal}>
                         <Text>Voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.btn, styles.btnSalvar]}>
+                    <TouchableOpacity style={[styles.btn, styles.btnSalvar]} onPress={{salvarTarefa, fecharModal}}>
                         <Text style={styles.textSalvar}>Salvar</Text>
                     </TouchableOpacity>
                 </View>
