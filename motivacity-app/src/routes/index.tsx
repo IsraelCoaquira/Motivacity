@@ -34,7 +34,7 @@ export function Routes(){
                             right: 16,
                             left: 16,
                             borderRadius: 16,
-                            backgroundColor: '#811d1d', 
+                            backgroundColor: '#fff', 
                         },tabBarLabelStyle:{
                             bottom: 8,
                             fontWeight: 'bold',

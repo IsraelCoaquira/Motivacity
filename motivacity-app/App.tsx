@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Routes } from './src/routes';
+import { Telatarefas } from './src/screens/Telatarefas';
 
 
 const Tab = createBottomTabNavigator();
