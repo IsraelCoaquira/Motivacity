@@ -1,5 +1,6 @@
 import { View, Text, TextInput, SafeAreaView, ScrollView, StatusBar, StyleSheet } from "react-native";
 import React from 'react'
+import {  } from "react-native-calendars";
 
 export function Telaprogresso(){
     return (
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   scrollView: {
-    backgroundColor: '#ed7d31',
+    backgroundColor: '#fff',
     marginHorizontal: 0,
   },
   text: {

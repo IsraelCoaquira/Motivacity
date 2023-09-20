@@ -25,7 +25,7 @@ export function Routes(){
                     options={{
                         tabBarIcon: ({ size, color }) => 
                         <FontAwesome5 name="tasks" size={size} color={color}/>,
-                        tabBarActiveTintColor: "#3b0909",
+                        tabBarActiveTintColor: "#f92e2e",
                         tabBarInactiveTintColor: '#3b0909',
                         tabBarStyle: {
                             height: 60,
@@ -46,7 +46,7 @@ export function Routes(){
                     options={{
                         tabBarIcon: ({ size, color }) => 
                         <FontAwesome name="calendar" size={size} color={color}/>,
-                        tabBarActiveTintColor: '#522507',
+                        tabBarActiveTintColor: '#ffa200',
                         tabBarInactiveTintColor: '#522507',
                         tabBarStyle: {
                             height: 60,
@@ -55,7 +55,7 @@ export function Routes(){
                             right: 16,
                             left: 16,
                             borderRadius: 16,
-                            backgroundColor: '#8d410d', 
+                            backgroundColor: '#fff', 
                         },tabBarLabelStyle:{
                             bottom: 8,
                             fontWeight: 'bold',
