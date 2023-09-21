@@ -19,17 +19,29 @@ export function Modaloja({fecharLoja}){
                 </View>
                 </View><ScrollView style={styles.produtos}>
                 <View style={[styles.bloco, {backgroundColor: '#70ad47'}]}>
-                    <Text style={styles.txtbloco}>COMPRE</Text>
-                    <Image source={require('../assets/images/casa2.webp')}/></View>
-                <View style={[styles.bloco, {backgroundColor: '#b54545'}]}>
-                    <Text style={styles.txtbloco}>COMPRE</Text>
-                    <Image/></View>
-                <View style={[styles.bloco, {backgroundColor: '#ed7d31'}]}>
-                    <Text style={styles.txtbloco}>COMPRE</Text>
-                    <Image/></View>
-                <View style={[styles.bloco, {backgroundColor: '#5e97fd'}]}>
-                    <Text style={styles.txtbloco}>COMPRE</Text>
-                    <Image/></View>
+                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
+                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
+                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
+                    </View>
+                    </View>
+                    <View style={[styles.bloco, {backgroundColor: '#ffbfbf'}]}>
+                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
+                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
+                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
+                    </View>
+                    </View>
+                    <View style={[styles.bloco, {backgroundColor: '#ed7d31'}]}>
+                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
+                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
+                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
+                    </View>
+                    </View>
+                    <View style={[styles.bloco, {backgroundColor: '#5e97fd'}]}>
+                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
+                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
+                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
+                    </View>
+                    </View>
             </ScrollView>
             </View>
             </KeyboardAvoidingView>
@@ -60,9 +72,9 @@ const styles = StyleSheet.create({
     areaTitulo:{
         //backgroundColor: 'green',
         flexDirection:'row',
-        marginHorizontal:10,
+        marginHorizontal:16,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     viewTitulo:{
         //backgroundColor: 'green',
@@ -81,8 +93,18 @@ const styles = StyleSheet.create({
     produtos:{
         width: '100%',
     },
+    imageBloco:{
+        alignSelf: 'center',
+        height: 160,
+        width:340,
+        borderRadius: 40,
+        justifyContent:'center',
+        alignSelf:'center',
+        position: 'absolute'
+    },
     bloco:{
         alignSelf: 'center',
+        justifyContent: 'center',
         height: 200,
         width:340,
         borderRadius: 40,
@@ -90,11 +112,24 @@ const styles = StyleSheet.create({
         justifyContent:'flex-end'
     },
     txtbloco:{
-        marginLeft: 40,
-        marginBottom: 40,
-        fontSize: 24,
+        
+        fontSize: 30,
+        alignSelf: 'center',
+        alignItems:'center',
         fontWeight: 'bold',
-        color:'#fff'
+        color:'#720000',
+        borderRadius:40,
+        //backgroundColor:'green'
+    },
+    viewtxt:{
+        marginLeft: 30,
+        marginBottom: 20,
+        height: 70,
+        width: 70,
+        padding: 16,
+        alignItems:"center",
+        fontWeight: 'bold',
+        borderRadius: 30
     },
     Titulo:{
         fontSize: 30,  
@@ -104,9 +139,9 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 14,
-        marginLeft: "10%",
+        alignSelf:'center',
         //marginBottom: "2%",
-        marginTop:20,
+       
         color: "#000"
     },
     Input:{

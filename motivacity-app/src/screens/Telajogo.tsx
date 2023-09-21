@@ -13,7 +13,7 @@ export function Telajogo(){
     const abrirLoja = () =>{setLojaVisible(true)}
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>
       <View style={styles.viewCabecalho}><Image 
       source={require('../assets/images/BgCidade.png')}
@@ -21,10 +21,15 @@ export function Telajogo(){
       </View></ScrollView>
       <View style={styles.viewBotoes}>
       <View style={styles.viewCoins}><Text style={styles.text}>$ 2000,00</Text></View>
-      <TouchableOpacity onPress={abrirLoja}><View style={styles.viewBtnLoja}><Image style={styles.viewIconLoja} source={require('../assets/images/compras.png')}></Image></View></TouchableOpacity>
+      <TouchableOpacity onPress={abrirLoja}>
+        <View style={styles.viewBtnLoja}>
+        <Image style={styles.viewIconLoja} source={require('../assets/images/compras.png')}></Image>
+        </View>
+        </TouchableOpacity>
       <Modal visible={lojaVisible} animationType="fade" transparent={true}>
         <Modaloja fecharLoja = {() => setLojaVisible(false)}/>
         </Modal>
+      </View>
       </View>
     </SafeAreaView>
   );
@@ -34,14 +39,20 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width:  '100%',
-    paddingTop: StatusBar.currentHeight,
+    backgroundColor: 'blue'
+  },
+  viewPagina:{
+    height: '100%',
+    width: '100%',
+    //marginStart:0,
+    backgroundColor: 'red'
   },
   scrollCabecalho: {
     position:'absolute',
-    flex: 1,
+    
     height:'100%',
     width: '100%',
-    marginTop:48,
+    //marginTop:48,
     //justifyContent: 'center',
     backgroundColor: '#5cc065'
   },
@@ -49,13 +60,13 @@ const styles = StyleSheet.create({
     //backgroundColor: 'green',
     //backgroundColor: '#ffd690'
     alignSelf: 'center',
-    height:800,
+    height:'100%',
     width: 1000,
     justifyContent: 'center',
-  },
+  }, 
   imageCabecalho:{
     resizeMode: 'cover',
-    height: '95%',
+    height: '100%',
     width: '100%',
   },
   scrollView: {
@@ -84,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius:20,
     height:64,
     width:64,
-    marginTop: 10,
+    marginTop: 15,
     marginRight: 12,
     alignItems: 'center',
     justifyContent: 'center'
