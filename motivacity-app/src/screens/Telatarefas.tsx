@@ -2,20 +2,9 @@ import { View, TouchableOpacity, Text, TextInput, SafeAreaView, ScrollView, Stat
 import React, { useState } from 'react'
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import { ModalAddTarefa } from "../assets/modal";
 
 
 export function Telatarefas(){
-
-  const [modalVisible, setModalVisible] = useState(false)
-
-  function abriraddTarefas(){
-    setModalVisible(true)
-  }
-  function mostrarTarefas() {
-    //const data = storage.getString('user')
-  }
-
     return (
         <SafeAreaView style={styles.container}>
           <View>
@@ -24,7 +13,7 @@ export function Telatarefas(){
           <View><Text style={styles.textTitulo}>Minhas Tarefas</Text>
           <Text style={styles.textSubtitulo}>Tarefas em andamento</Text>
           </View>
-          <TouchableOpacity style = {styles.btnAdd} onPress={abriraddTarefas}>
+          <TouchableOpacity style = {styles.btnAdd}>
             <FontAwesome name="calendar-o" style = {styles.icons}/></TouchableOpacity>
           </View>
           <View style={styles.viewOpcoes}>
@@ -32,13 +21,13 @@ export function Telatarefas(){
             <View style={styles.styleOpcoes}>
               <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff85aa", color: '#ff004e'}]}/>
               <View><Text style={styles.textOptions}>Prioridades</Text>
-              <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 no momento</Text></View></View>
+              <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 tarefas marcadas</Text></View></View>
               </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.styleOpcoes}>
               <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ffeb8c", color: '#e7b300'}]}/>
               <View><Text style={styles.textOptions}>Premiadas</Text>
-              <Text style={styles.subtextOptions}>Tarefas com melhores prêmios - 5 em lista</Text></View></View></TouchableOpacity>
+              <Text style={styles.subtextOptions}>Tarefas com melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
           </View>
           <ScrollView style={styles.viewConteudo}>
           <View style={styles.miniviews}>
@@ -57,7 +46,7 @@ export function Telatarefas(){
               <Text style={styles.subTextButtons}>1 em andamento</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#5e97fd'}]}>
-              <Text style={styles.textButtons}>Escolares</Text>
+              <Text style={styles.textButtons}>Estudos</Text>
               <Text style={styles.subTextButtons}>0 em andamento </Text>
             </TouchableOpacity>
           </View>
@@ -77,7 +66,7 @@ const styles = StyleSheet.create({
   textTitulo: {
     fontSize: 32,
     marginLeft: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   textSubtitulo: {
     fontSize: 14 ,
@@ -204,7 +193,7 @@ const styles = StyleSheet.create({
     justifyContent:'center'
     }, 
     viewRodape: {
-      backgroundColor: 'green',
+      backgroundColor: '#ffffff',
 //      justifyContent: 'flex-end',  
       height: 70,
       width: "100%"  
