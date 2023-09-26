@@ -9,7 +9,7 @@ import { Modaloja } from "./Telaloja";
 export function Telajogo(){
 
   const [lojaVisible, setLojaVisible] = useState(false);
-
+ 
     const abrirLoja = () =>{setLojaVisible(true)}
 
     return (

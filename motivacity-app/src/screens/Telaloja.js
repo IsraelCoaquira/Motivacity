@@ -24,37 +24,93 @@ export function Modaloja({fecharLoja}){
                 
                 <Text style = {styles.produtosTitulo}>Residêncial</Text>
                 <ScrollView style={styles.produtosScroll} horizontal>
-                    <View style = {styles.produtosviewimg}><Image style = {styles.produtosimg}/></View>
-                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
-                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
-                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
-                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
-                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#73c23e'}]}><Image style = {styles.produtosimg}/></View>
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Comercial</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#e44343'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Industrial</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Lazer e Turismo</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#5e97fd'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Agricultura</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#94d763'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Transporte</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fbc82e'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Infraestrutura</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ffa060'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Educação e saúde</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#ff6262'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Energia</Text>
-                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#256be7'}]}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
             </ScrollView>
             </View>
             </View>
@@ -129,7 +185,19 @@ const styles = StyleSheet.create({
         height: 150,
         width: 320,
         //marginLeft: 40,
-        backgroundColor: 'blue'
-
-    }
+        //backgroundColor: 'blue'
+    },
+    produtosviewimg:{
+        height: '100%',
+        width: 150,
+        marginRight: 20,
+        borderRadius: 40,
+        //backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    produtosimg:{
+        height: 120,
+        width: 120,
+    },
 })
