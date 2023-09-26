@@ -10,39 +10,53 @@ export function Modaloja({fecharLoja}){
     return(
         <View style = {styles.container}> 
         <KeyboardAvoidingView>
-            <View style = {styles.Quadradinho}><View style={styles.viewTitulo}>
+            <View style = {styles.Quadradinho}>
+                <View style={styles.viewTitulo}>
                 <View style = {styles.areaTitulo}>
                     <TouchableOpacity style={styles.btn} onPress={fecharLoja}>
                         <AntDesign name="caretleft" style={styles.btnVoltar}/>
                     </TouchableOpacity>
-                <Text style = {styles.Titulo}>Loja</Text>
+                <Text style = {styles.Titulo}>LOJA</Text>
                 </View>
-                </View><ScrollView style={styles.produtos}>
-                <View style={[styles.bloco, {backgroundColor: '#70ad47'}]}>
-                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
-                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
-                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
-                    </View>
-                    </View>
-                    <View style={[styles.bloco, {backgroundColor: '#ffbfbf'}]}>
-                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
-                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
-                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
-                    </View>
-                    </View>
-                    <View style={[styles.bloco, {backgroundColor: '#ed7d31'}]}>
-                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
-                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
-                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
-                    </View>
-                    </View>
-                    <View style={[styles.bloco, {backgroundColor: '#5e97fd'}]}>
-                <Image source={require('../assets/images/casa2.webp')} style={styles.imageBloco}/>
-                <View style={[styles.viewtxt, {backgroundColor: '#e43030',}]}>
-                    <FontAwesome name="shopping-bag" style={[styles.txtbloco, {color: '#ffbfbf'}]}/>
-                    </View>
-                    </View>
+                </View>
+                <View style={styles.produtosView}>
+                    <ScrollView style={styles.produtos}>
+                
+                <Text style = {styles.produtosTitulo}>Residêncial</Text>
+                <ScrollView style={styles.produtosScroll} horizontal>
+                    <View style = {styles.produtosviewimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                    <View style = {styles.produtosimg}><Image style = {styles.produtosimg}/></View>
+                </ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Comercial</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Industrial</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Lazer e Turismo</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Agricultura</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Transporte</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Infraestrutura</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Educação e saúde</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
+                
+                <Text style = {styles.produtosTitulo}>Energia</Text>
+                <ScrollView style={styles.produtosScroll} horizontal></ScrollView>
             </ScrollView>
+            </View>
             </View>
             </KeyboardAvoidingView>
         </View>
@@ -50,10 +64,10 @@ export function Modaloja({fecharLoja}){
 }
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "rgba(24, 24, 24, 0.6)",
+        backgroundColor: "green",
         height: '100%',
         width: '100%',
-        //marginBottom:30,
+        
 
         //alignSelf: 'center',
         //justifyContent: 'center',
@@ -72,7 +86,8 @@ const styles = StyleSheet.create({
     areaTitulo:{
         //backgroundColor: 'green',
         flexDirection:'row',
-        marginHorizontal:16,
+        marginHorizontal:30,
+        marginTop: 10,
         alignItems: 'center',
         justifyContent: 'space-between',
     },
@@ -83,79 +98,38 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     btnVoltar:{
-        fontSize: 30,  
-        color: '#750606',
+        fontSize: 50,  
+        color: '#09275a',
         //backgroundColor: '#e74e4e',
-        padding:10,
-        borderRadius:30,
-        fontWeight:'bold'
+        borderRadius:20,
+    },
+    Titulo:{
+        fontSize: 40,  
+        color: '#09275a',
+        fontWeight: 'bold',
+        marginRight: 110
+    },
+    produtosView:{
+        //backgroundColor: 'red',
+        marginTop: 10,
+        marginBottom: 90,
     },
     produtos:{
         width: '100%',
     },
-    imageBloco:{
-        alignSelf: 'center',
-        height: 160,
-        width:340,
-        borderRadius: 40,
-        justifyContent:'center',
-        alignSelf:'center',
-        position: 'absolute'
+    produtosTitulo:{
+        marginTop: 15,
+        fontSize: 24,
+        fontWeight: "bold",
+        //marginLeft: 40,
+        color: '#09275a',
     },
-    bloco:{
-        alignSelf: 'center',
-        justifyContent: 'center',
-        height: 200,
-        width:340,
-        borderRadius: 40,
-        marginTop:20,
-        justifyContent:'flex-end'
-    },
-    txtbloco:{
-        
-        fontSize: 30,
-        alignSelf: 'center',
-        alignItems:'center',
-        fontWeight: 'bold',
-        color:'#720000',
-        borderRadius:40,
-        //backgroundColor:'green'
-    },
-    viewtxt:{
-        marginLeft: 30,
-        marginBottom: 20,
-        height: 70,
-        width: 70,
-        padding: 16,
-        alignItems:"center",
-        fontWeight: 'bold',
-        borderRadius: 30
-    },
-    Titulo:{
-        fontSize: 30,  
-        color: '#750606',
-        fontWeight: 'bold',
-        marginRight: 150
-    },
-    text:{
-        fontSize: 14,
-        alignSelf:'center',
-        //marginBottom: "2%",
-       
-        color: "#000"
-    },
-    Input:{
+    produtosScroll:{
         marginTop: 10,
-        alignSelf: 'center',
-        backgroundColor: "#FFF",
-        width: "84%",
-        height: 48,
-        borderWidth: 1,
-        borderRadius: 12,
-        borderColor: "#af3131",
-        padding: 10,
-    },
-    
-    
-    
+        height: 150,
+        width: 320,
+        //marginLeft: 40,
+        backgroundColor: 'blue'
+
+    }
 })

@@ -19,13 +19,13 @@ export function Telatarefas(){
           <View style={styles.viewOpcoes}>
             <TouchableOpacity>
             <View style={styles.styleOpcoes}>
-              <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff85aa", color: '#ff004e'}]}/>
+              <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff95b5", color: '#ff004e'}]}/>
               <View><Text style={styles.textOptions}>Prioridades</Text>
               <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 tarefas marcadas</Text></View></View>
               </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.styleOpcoes}>
-              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ffeb8c", color: '#e7b300'}]}/>
+              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#fff1ad", color: '#ddaa02'}]}/>
               <View><Text style={styles.textOptions}>Premiadas</Text>
               <Text style={styles.subtextOptions}>Tarefas com melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
           </View>
@@ -67,10 +67,12 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginLeft: 20,
     fontWeight: 'bold',
+    color: '#09275a',
   },
   textSubtitulo: {
     fontSize: 14 ,
     marginLeft: 20,
+    color: '#09275a',
   },
   
   viewTitulo: {
@@ -107,7 +109,8 @@ const styles = StyleSheet.create({
     textOptions: {  
       marginLeft: 20,
       fontWeight: 'bold',
-      fontSize: 14
+      fontSize: 14,
+      color: '#18438d',
       }, 
       subtextOptions: {  
         marginLeft: 20,

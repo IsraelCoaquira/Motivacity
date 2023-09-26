@@ -13,7 +13,8 @@ export function Telajogo(){
     const abrirLoja = () =>{setLojaVisible(true)}
 
     return (
-        <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>
       <View style={styles.viewCabecalho}><Image 
       source={require('../assets/images/BgCidade.png')}
@@ -37,9 +38,10 @@ export function Telajogo(){
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: '100%',
     width:  '100%',
-    backgroundColor: 'blue'
+    paddingTop: StatusBar.currentHeight,
   },
   viewPagina:{
     height: '100%',
