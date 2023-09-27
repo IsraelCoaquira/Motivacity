@@ -1,20 +1,17 @@
-import { View, Text, TextInput, SafeAreaView, Image, StatusBar, StyleSheet, Modal } from "react-native";
+import { View, Text, TextInput, SafeAreaView, Image, StatusBar, Modal } from "react-native";
+import { StyleSheet } from "react-native";
 import React, {useState} from 'react'
 import { ImageViewer } from "react-native-image-zoom-viewer";
 import { FontAwesome } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Modaloja } from "./Telaloja";
-
 export function Telajogo(){
-
   const [lojaVisible, setLojaVisible] = useState(false);
- 
     const abrirLoja = () =>{setLojaVisible(true)}
-
+  
     return (
-        <SafeAreaView style={styles.container}>
-          <View style={styles.viewPagina}>
+        <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>
       <View style={styles.viewCabecalho}><Image 
       source={require('../assets/images/BgCidade.png')}
@@ -24,7 +21,7 @@ export function Telajogo(){
       <View style={styles.viewCoins}><Text style={styles.text}>$ 2000,00</Text></View>
       <TouchableOpacity onPress={abrirLoja}>
         <View style={styles.viewBtnLoja}>
-        <Image style={styles.viewIconLoja} source={require('../assets/images/compras.png')}></Image>
+        <Image style={styles.viewIconLoja} source={require('../assets/images/btcompras.png')}></Image>
         </View>
         </TouchableOpacity>
       <Modal visible={lojaVisible} animationType="fade" transparent={true}>
@@ -35,10 +32,8 @@ export function Telajogo(){
     </SafeAreaView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     height: '100%',
     width:  '100%',
     paddingTop: StatusBar.currentHeight,
@@ -46,29 +41,30 @@ const styles = StyleSheet.create({
   viewPagina:{
     height: '100%',
     width: '100%',
-    //marginStart:0,
     backgroundColor: 'red'
   },
   scrollCabecalho: {
     position:'absolute',
-    
+    flex: 1,
+
     height:'100%',
     width: '100%',
-    //marginTop:48,
-    //justifyContent: 'center',
     backgroundColor: '#5cc065'
   },
   viewCabecalho: {
     //backgroundColor: 'green',
     //backgroundColor: '#ffd690'
     alignSelf: 'center',
-    height:'100%',
+    height:800,
+    //height:'100%',
     width: 1000,
     justifyContent: 'center',
-  }, 
+  },
+  
   imageCabecalho:{
     resizeMode: 'cover',
-    height: '100%',
+    height: '95%',
+    //height: '100%',
     width: '100%',
   },
   scrollView: {
@@ -97,7 +93,8 @@ const styles = StyleSheet.create({
     borderRadius:20,
     height:64,
     width:64,
-    marginTop: 15,
+    marginTop: 10,
+    //marginTop: 15,
     marginRight: 12,
     alignItems: 'center',
     justifyContent: 'center'
