@@ -44,7 +44,7 @@ export function Modaloja({fecharLoja}){
                 
                 <Text style = {styles.produtosTitulo}>Industrial</Text>
                 <ScrollView style={styles.produtosScroll} horizontal>
-                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
+                    <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg} source={require('../assets/images/loja5.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#fc7a23'}]}><Image style = {styles.produtosimg}/></View>

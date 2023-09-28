@@ -72,7 +72,7 @@ const Schedule: React.FC = () => {
         <View><Text style={styles.tituloCabecalho}>Progressos</Text>
         <Text style={styles.subTituloCabecalho}>Progressos de suas tarefas</Text>
         </View>
-        <TouchableOpacity style={styles.btnAddTarefas} onPress={abriraddTarefas}><Text style={styles.textBtnAdd}>+ Add Tarefas</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.btnAddTarefas} onPress={abriraddTarefas}><Text style={styles.textBtnAdd}>+Add Tarefas</Text></TouchableOpacity>
         <Modal visible={modalVisible} animationType="fade" transparent={true}>
         <ModalAddTarefa  fecharModal = {() => setModalVisible(false)}/>
         </Modal>
