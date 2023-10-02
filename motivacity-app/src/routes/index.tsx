@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Telajogo } from '../screens/Telajogo'
 import { Telatarefas } from "../screens/Telatarefas";
-import Schedule from "../screens/Telaprogresso";
+import {Telaprogresso} from "../screens/Telaprogresso";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Colors } from "react-native/Libraries/NewAppScreen";
@@ -42,7 +42,7 @@ export function Routes(){
                         }}}/>
                 <Tab.Screen
                     name="Progresso"
-                    component={Schedule}
+                    component={Telaprogresso}
                     options={{
                         tabBarIcon: ({ size, color }) => 
                         <FontAwesome name="calendar" size={size} color={color}/>,
