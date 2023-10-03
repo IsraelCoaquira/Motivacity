@@ -6,12 +6,18 @@ import { FontAwesome } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Modaloja } from "./Telaloja";
+import { Routes } from "../routes/index";
+
 export function Telajogo(){
   const [lojaVisible, setLojaVisible] = useState(false);
     const abrirLoja = () =>{setLojaVisible(true)}
+    
   
     return (
         <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
+          <Modal style={styles.modal}visible={lojaVisible} animationType="fade" transparent={true}>
+        <Modaloja fecharLoja = {() => setLojaVisible(false)}/>
+        </Modal>
       <ScrollView style={styles.scrollCabecalho} horizontal>
       <View style={styles.viewCabecalho}><Image 
       source={require('../assets/images/BgCidade.png')}
@@ -27,9 +33,6 @@ export function Telajogo(){
         <Image style={styles.viewIconLoja} source={require('../assets/images/btselecionar.png')}></Image>
         </View>
         </TouchableOpacity>
-      <Modal visible={lojaVisible} animationType="fade" transparent={true}>
-        <Modaloja fecharLoja = {() => setLojaVisible(false)}/>
-        </Modal>
       </View>
       </View>
     </SafeAreaView>
@@ -40,6 +43,9 @@ const styles = StyleSheet.create({
     height: '100%',
     width:  '100%',
     paddingTop: StatusBar.currentHeight,
+  },
+  modal:{
+    margin: 0,
   },
   viewPagina:{
     height: '100%',

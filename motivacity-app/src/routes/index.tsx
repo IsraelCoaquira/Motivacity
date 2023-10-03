@@ -3,12 +3,18 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Telajogo } from '../screens/Telajogo'
 import { Telatarefas } from "../screens/Telatarefas";
 import {Telaprogresso} from "../screens/Telaprogresso";
+import { TelaListaTarefas } from "../screens/TelaListaTarefas";
+import { createStackNavigator } from "@react-navigation/stack";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Animated, PlatformColor, View, Text, TouchableOpacity, ScrollView, Image, Dimensions } from "react-native";
+import StackRoutes from "./stack.routes";
 
 const Tab = createBottomTabNavigator();
+
+const Stack = createStackNavigator();
+
 
 
 export function Routes(){
@@ -21,7 +27,7 @@ export function Routes(){
             }}>
                 <Tab.Screen
                     name="Início"
-                    component={Telatarefas}
+                    component={Stacks}
                     options={{
                         tabBarIcon: ({ size, color,focused}) => 
                         <FontAwesome5 name="tasks" size={size} color={color}/>,
@@ -85,4 +91,20 @@ export function Routes(){
             </Tab.Navigator>
         </NavigationContainer>
     )
+}
+
+/*<Stack.Navigator screenOptions={{headerShown:false}}>
+                <Stack.Screen name="Início" component={Tabs}/>
+                <Stack.Screen name="ListaTarefas" component={TelaListaTarefas}/>
+            </Stack.Navigator>*/
+
+    function Stacks() {
+        return(
+            <Stack.Navigator screenOptions={{
+                headerShown:false
+                }}>
+                <Stack.Screen name="Início" component={Telatarefas}/>
+                <Stack.Screen name="ListaTarefas" component={TelaListaTarefas}/>
+            </Stack.Navigator>
+        );
 }
