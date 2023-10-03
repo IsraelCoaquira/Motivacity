@@ -23,6 +23,9 @@ export function Telajogo(){
         <View style={styles.viewBtnLoja}>
         <Image style={styles.viewIconLoja} source={require('../assets/images/btcompras.png')}></Image>
         </View>
+        <View style={styles.viewBtnSelecionar}>
+        <Image style={styles.viewIconLoja} source={require('../assets/images/btselecionar.png')}></Image>
+        </View>
         </TouchableOpacity>
       <Modal visible={lojaVisible} animationType="fade" transparent={true}>
         <Modaloja fecharLoja = {() => setLojaVisible(false)}/>
@@ -88,6 +91,19 @@ const styles = StyleSheet.create({
     //alignSelf: 'center',
   },
   viewBtnLoja: {
+    //backgroundColor: 'green',
+    backgroundColor: '#57a6f0',
+    borderRadius:20,
+    height:64,
+    width:64,
+    marginTop: 10,
+    //marginTop: 15,
+    marginRight: 12,
+    alignItems: 'center',
+    justifyContent: 'center'
+    //alignSelf: 'center',
+  },
+  viewBtnSelecionar: {
     //backgroundColor: 'green',
     backgroundColor: '#57a6f0',
     borderRadius:20,
