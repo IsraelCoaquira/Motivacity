@@ -2,13 +2,14 @@ import { View, TouchableOpacity, Text, KeyboardAvoidingView, Image, TextInput, S
 import React, { useState } from 'react'
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { SCREEN_HEIGHT } from "../constants/Screen";
 
 
 
 export function Modaloja({fecharLoja}){
 
     return(
-        <View style = {styles.container}> 
+        <View style = {styles.tela}> 
         <KeyboardAvoidingView>
             <View style = {styles.Quadradinho}>
                 <View style={styles.viewTitulo}>
@@ -119,7 +120,7 @@ export function Modaloja({fecharLoja}){
     )
 }
 const styles = StyleSheet.create({
-    container:{
+    tela:{
         backgroundColor: "green",
         height: '100%',
         width: '100%',
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems:'center',
         //justifyContent: 'center',
-        height: '100%',
+        height: SCREEN_HEIGHT,
         width: '100%',
     },
     areaTitulo:{
