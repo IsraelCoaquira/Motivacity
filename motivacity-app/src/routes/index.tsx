@@ -20,7 +20,7 @@ export function Routes(){
                 tabBarHideOnKeyboard: true
             }}>
                 <Tab.Screen
-                    name="Tarefas"
+                    name="Início"
                     component={Telatarefas}
                     options={{
                         tabBarIcon: ({ size, color,focused}) => 
@@ -41,7 +41,7 @@ export function Routes(){
                             fontSize: 11
                         }}}/>
                 <Tab.Screen
-                    name="Progresso"
+                    name="Agenda"
                     component={Telaprogresso}
                     options={{
                         tabBarIcon: ({ size, color }) => 

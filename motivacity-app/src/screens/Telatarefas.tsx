@@ -1,12 +1,31 @@
 import { View, TouchableOpacity, Text, TextInput, SafeAreaView, ScrollView, StatusBar, StyleSheet, Modal } from "react-native";
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
+SplashScreen.preventAutoHideAsync();
 
 export function Telatarefas(){
+  
+  const [fontsLoaded, fontError] = useFonts({
+    'Poppins': require('../../assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-Extralight': require('../../assets/fonts/Poppins-ExtraLight.ttf'),
+  });
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
           <View>
           </View>
           <View style={styles.viewTitulo}>
@@ -19,15 +38,15 @@ export function Telatarefas(){
           <View style={styles.viewOpcoes}>
             <TouchableOpacity>
             <View style={styles.styleOpcoes}>
-              <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff95b5", color: '#ff004e'}]}/>
+              <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff95b5", color: '#ff004e', borderColor: '#ff004e'}]}/>
               <View><Text style={styles.textOptions}>Prioridades</Text>
               <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 tarefas marcadas</Text></View></View>
               </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.styleOpcoes}>
-              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#fff1ad", color: '#ddaa02'}]}/>
+              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#fff1ad", color: '#ddaa02', borderColor: '#ddaa02'}]}/>
               <View><Text style={styles.textOptions}>Premiadas</Text>
-              <Text style={styles.subtextOptions}>Tarefas com melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
+              <Text style={styles.subtextOptions}>Tarefas de melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
           </View>
           <ScrollView style={styles.viewConteudo}>
           <View style={styles.miniviews}>
@@ -65,14 +84,16 @@ const styles = StyleSheet.create({
   },
   textTitulo: {
     fontSize: 32,
-    marginLeft: 20,
-    fontWeight: 'bold',
+    marginLeft: 12,
+    //fontWeight: 'bold',
     color: '#09275a',
+    fontFamily: 'Poppins'
   },
   textSubtitulo: {
     fontSize: 14 ,
-    marginLeft: 20,
+    marginLeft: 12,
     color: '#09275a',
+    fontFamily: 'Poppins'
   },
   
   viewTitulo: {
@@ -96,10 +117,11 @@ const styles = StyleSheet.create({
   iconsOpcoes:{
     borderRadius: 20,
     alignItems:'center',
-    height: 30,
-    width: 30,
+    height: 36,
+    width: 36,
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderWidth: 3,
   },
   iconsOpcoes2: {  
     fontSize: 16,
@@ -107,14 +129,16 @@ const styles = StyleSheet.create({
     textAlignVertical:'center',
     }, 
     textOptions: {  
-      marginLeft: 20,
-      fontWeight: 'bold',
+      marginLeft: 12,
+      //fontWeight: 'bold',
       fontSize: 14,
       color: '#18438d',
+      fontFamily: 'Poppins-Bold'
       }, 
       subtextOptions: {  
-        marginLeft: 20,
-        fontSize: 11
+        marginLeft: 12,
+        fontSize: 11,
+        fontFamily: 'Poppins'
         }, 
   viewConteudo: {
     backgroundColor: '#fff',
@@ -142,15 +166,16 @@ const styles = StyleSheet.create({
   textButtons: {
     color: "#fff",
     fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    marginLeft: 25
+    //fontWeight: 'bold',
+    marginLeft: 20,
+    fontFamily: 'Poppins-Bold',
   },
   subTextButtons: {
     color: "#fff",
     fontSize: 12,
-    marginBottom: 25,
-    marginLeft: 25
+    marginBottom: 30,
+    marginLeft: 20,
+    fontFamily: 'Poppins',
   },
   buttonsRight: {
     alignSelf: 'center',
@@ -179,19 +204,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btnAdd: {  
-    marginTop: 20,
+    marginTop: 14,
     marginLeft: 60,
-    borderRadius: 18,  
+    borderRadius: 20,  
     backgroundColor: '#97b6ee',
-    height: 36,
-    width: 36,
+    height: 40,
+    width: 40,
     alignItems: 'center',
     justifyContent: 'center'
   },
   icons: {  
     borderRadius: 20,  
     color: '#4472c4' ,
-    fontSize: 20,
+    fontSize: 24,
     alignSelf: 'center',
     justifyContent:'center'
     }, 

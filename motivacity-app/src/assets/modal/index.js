@@ -63,16 +63,17 @@ export function ModalAddTarefa({fecharModal}){
                     <View style = {styles.viewCategoria}>
                         <Text style = {styles.textCategoria}>CATEGORIA</Text>
                         <View style = {styles.coluna1ComCategorias}>
-                        <View style = {[styles.viewComCategorias, {backgroundColor: '#70ad47'}]}>
-                            <Text style={styles.textSalvar}>Esportes</Text></View>
-                        <View style = {[styles.viewComCategorias, {backgroundColor: '#b54545'}]}>
-                            <Text style={styles.textSalvar}>Desafios</Text></View>
+                        <TouchableOpacity><View style = {[styles.viewComCategorias, {backgroundColor: '#c1fc9a',}]}>
+                            <Text style={[styles.txtCategoria, {color: '#5da32e'}]}>ESPORTES</Text></View></TouchableOpacity>
+                            <TouchableOpacity><View style = {[styles.viewComCategorias, {backgroundColor: '#fd8080'}]}>
+                            <Text style={[styles.txtCategoria,{color: '#bd2121'}]}>DESAFIOS</Text>
+                            </View></TouchableOpacity>
                         </View>
                         <View style = {styles.coluna2ComCategorias}>
-                        <View style = {[styles.viewComCategorias, {backgroundColor:  '#ed7d31'}]}>
-                            <Text style={styles.textSalvar}>Pessoais</Text></View>
-                        <View style = {[styles.viewComCategorias, {backgroundColor: '#5e97fd'}]}>
-                            <Text style={styles.textSalvar}>Estudos</Text></View>
+                        <TouchableOpacity><View style = {[styles.viewComCategorias, {backgroundColor:  '#ffb685'}]}>
+                            <Text style={[styles.txtCategoria, {color: '#e06c1f'}]}>PESSOAIS</Text></View></TouchableOpacity>
+                            <TouchableOpacity><View style = {[styles.viewComCategorias, {backgroundColor: '#90b9ff'}]}>
+                            <Text style={[styles.txtCategoria, {color: '#3379f3'}]}>ESTUDOS</Text></View></TouchableOpacity>
                         </View>
                     </View>
                     <TouchableOpacity style={styles.btnSalvar} onPress={ fecharModal}>
@@ -116,10 +117,11 @@ const styles = StyleSheet.create({
         //marginBottom: 14,
     },
     Titulo:{
-        fontSize: 30,
+        fontSize: 28,
         color: "#fff",
         marginTop: '6%',
-        marginLeft: '4%'
+        marginLeft: '4%',
+        fontFamily: 'Poppins'
     },
     labelNome:{
         fontSize: 10,
@@ -294,10 +296,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     
+    txtCategoria:{
+        alignSelf: 'center',
+        //color: '#fff',
+        fontSize: 14,
+        fontWeight: 'bold'
+    },
     textSalvar:{
         alignSelf: 'center',
         color: '#fff',
-        fontSize: 16,
-        fontWeight: 'bold'
+        fontSize: 18,
+        //fontWeight: 'bold',
+        fontFamily: 'Poppins-Bold'
     }
 })

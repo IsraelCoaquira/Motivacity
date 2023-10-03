@@ -1,11 +1,15 @@
-import { View, Text, TextInput, SafeAreaView, FlatList, ScrollView, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
-import React,{useState} from 'react'
+import { View, Text, TextInput, SafeAreaView, FlatList, Modal, ScrollView, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
+import React,{useState, useCallback} from 'react'
 import { Calendar, LocaleConfig, CalendarList, Agenda } from "react-native-calendars";
 import eventos from "../hooks/eventos.json";
 import { format, addHours } from 'date-fns';
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 import { horario } from "../constants/horarios";
+import { ModalAddTarefa } from "../assets/modal/index";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
 
 LocaleConfig.locales.fr = {
   monthNames: [
@@ -51,8 +55,13 @@ LocaleConfig.locales.fr = {
 LocaleConfig.defaultLocale = "fr";
 
 export function Telaprogresso(){
+  const [addTarefasVisible, setAddTarefasVisible] = useState(false);
+    const abrirAddTarefas = () =>{setAddTarefasVisible(true)}
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container} >
+        <Modal visible={addTarefasVisible} animationType="fade" transparent={true}>
+        <ModalAddTarefa fecharModal = {() => setAddTarefasVisible(false)}/>
+        </Modal>
         <View style={styles.viewVoltar}>
           <TouchableOpacity>
               <AntDesign name='left' style={styles.btn}/>
@@ -63,7 +72,7 @@ export function Telaprogresso(){
             <Text style={styles.titulo}>Sua agenda</Text>
             <Text style={styles.subtitulo}>suas tarefas para o dia!</Text>
           </View>
-          <TouchableOpacity style = {styles.addTarefas}>
+          <TouchableOpacity style = {styles.addTarefas} onPress={abrirAddTarefas}>
             <Text style = {styles.txtAddTarefas}>
               Adicionar{'\n'}Tarefas
             </Text>
@@ -73,6 +82,7 @@ export function Telaprogresso(){
           <Text style={styles.procurar}>
             Procure o dia:
           </Text>
+          <TouchableOpacity>
           <View style={styles.dataPicker}>
           <View style={styles.dataView}>
             <Text style={styles.txtData}>02/10/2023
@@ -80,17 +90,24 @@ export function Telaprogresso(){
             <Feather name='calendar' style={styles.calendarIcon}/>
           </View>
           </View>
+          </TouchableOpacity>
           <FlatList 
             showsVerticalScrollIndicator={false} 
             style={styles.flatlist}
             keyExtractor={(item)=>item.id.toString()}
             data={horario}
             renderItem={({item})=>(
-              <TouchableOpacity>
-                <View>
-                  <Text>{item.hora}</Text>
-                  <Text></Text>
-                </View>
+              <TouchableOpacity style={styles.horaContainer}>
+                  <View style={styles.viewHora}>
+                    <Text style={styles.textHora}>
+                      {item.hora}
+                    </Text>
+                  </View>
+                  <View style={styles.viewTarefa}>
+                    <Text style={styles.textTarefa}>
+                      {item.tarefa}
+                    </Text>
+                  </View>
               </TouchableOpacity>
             )}/>
         </View>
@@ -140,10 +157,13 @@ const styles = StyleSheet.create({
   },
   titulo:{
     fontSize: 26,
-    fontWeight: 'bold'
+    //fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
+    //backgroundColor: 'gray'
   },
   subtitulo:{
-    fontSize: 13,
+    fontSize: 12,
+    fontFamily: 'Poppins',
     color: '#777777',
   },
   addTarefas:{
@@ -151,17 +171,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 28,
-    width: SCREEN_WIDTH*(1/3.6),
-    height: SCREEN_HEIGHT*(1/15),
-    marginLeft: SCREEN_HEIGHT*(1/8)
+    width: SCREEN_WIDTH*0.275,
+    height: SCREEN_HEIGHT*0.0675,
+    marginLeft: SCREEN_WIDTH*0.2,
+    marginTop: SCREEN_WIDTH*0.02
   },
   txtAddTarefas:{
-    fontWeight: 'bold',
     color: '#fff',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 12,
+    fontFamily: 'Poppins-Bold',
   },
   conteudo:{
-    marginTop:  SCREEN_HEIGHT*0.04
+    marginTop:  SCREEN_HEIGHT*0.04,
+    marginBottom:  SCREEN_HEIGHT *0.44
   },
   dataPicker:{
     alignSelf: 'center',
@@ -182,17 +205,19 @@ const styles = StyleSheet.create({
   procurar:{
     fontSize: 16,
     marginLeft: SCREEN_WIDTH*0.06,
+    fontFamily: 'Poppins',
   },
   txtData:{
     color: '#2323fd',
+    fontFamily: 'Poppins',
   },
   calendarIcon:{
     fontSize: 20,
     color: '#2323fd'
   },
   flatlist:{
-    marginLeft: SCREEN_WIDTH*0.075,
-    marginTop: SCREEN_WIDTH*0.025
+    marginHorizontal: SCREEN_WIDTH*0.025,
+    marginTop: SCREEN_WIDTH*0.05
   },
   calendario:{
     backgroundColor: 'yellow',
@@ -200,10 +225,44 @@ const styles = StyleSheet.create({
     margin: 20
     
   },
+  viewHora:{
+    height: SCREEN_HEIGHT*0.095,
+    width:SCREEN_WIDTH*0.175,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#eeeeee'
+  },
+  textHora:{
+    fontFamily: 'Poppins-Extralight',
+    fontSize: 15
+    //backgroundColor: 'gray'
+  },
+  viewTarefa:{
+    height: SCREEN_HEIGHT*0.095,
+    width:SCREEN_WIDTH*0.725,
+    borderLeftWidth: 5,
+    borderLeftColor: '#949494',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#eee'
+  },
+  textTarefa:{
+    fontFamily: 'Poppins-Extralight',
+    fontSize: 14
+    //backgroundColor: 'gray'
+  },
+  horaContainer:{
+    flexDirection: 'row',
+    width: SCREEN_WIDTH * 0.85,
+    height: SCREEN_HEIGHT*0.075,
+    alignItems: 'center',
+    //backgroundColor: 'red',
+    marginBottom: SCREEN_HEIGHT*0.03,
+  },
   item: {
     padding: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#d30000',
   },
   cima:{
     width: SCREEN_WIDTH,
