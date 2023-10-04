@@ -10,13 +10,14 @@ import { StackActions, TabRouter } from "@react-navigation/native";
 import { Telaprogresso } from "./Telaprogresso";
 import { Telajogo } from "./Telajogo";
 import { useNavigation } from '@react-navigation/native';
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 
 SplashScreen.preventAutoHideAsync();
 
 export function Telatarefas({navigation}){
 
-  
+   
 
   const [fontsLoaded, fontError] = useFonts({
     'Poppins': require('../../assets/fonts/Poppins-Regular.ttf'),
@@ -63,7 +64,8 @@ export function Telatarefas({navigation}){
               style={[styles.buttonsLeft,{backgroundColor: '#70ad47'}]} 
               onPress={() => {navigation.navigate('ListaTarefas', {
                 imagendereco: require('../assets/images/Esportes2.png'),
-                background: "#3d880c"
+                Background: "#fff",
+                  
               });}}>
               <Text style={styles.textButtons}>Esportes</Text>
               <Text style={styles.subTextButtons}>2 em andamento</Text>

@@ -3,9 +3,10 @@ import useStorage from "../../hooks/useStorage";
 import { MMKV } from "react-native-mmkv";
 import React,{ useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 //KeyboardAvoidingView
 
-export function ModalAddTarefa({fecharModal}){
+export function AddTarefas({navigation, route}){
     //const { saveItem } = useStorage();
 //    const { nomeTarefa, setNomeTarefa} = useState()
 //    const { prazoTarefa, setPrazoTarefa} = useState()
@@ -20,11 +21,13 @@ export function ModalAddTarefa({fecharModal}){
                 //<TextInput style = {styles.Input} placeholder="Descrição tarefa" onChangeText={setNomeTarefa}></TextInput>
 
     return(
+        <SafeAreaView style={styles.container}>
         <View style = {styles.container}>
 
             <View style = {styles.Quadradinho}>
                 <View style={styles.ViewCabeçalho}>
-                <TouchableOpacity style={styles.btn} onPress={fecharModal}>
+                <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Início'
+                )}>
                         <AntDesign name='left' style={styles.btn}/>
                     </TouchableOpacity>
                 <Text style = {styles.Titulo}>Criando Nova Tarefa</Text>
@@ -54,7 +57,7 @@ export function ModalAddTarefa({fecharModal}){
                         </View>
                     </View>
                     <View style = {styles.viewRecompensas}>
-                        <Text style = {styles.textRecompensas}>RECOMPENSAS</Text>
+                        <Text style = {styles.textRecompensas}>DIFICULDADE</Text>
                         <View style = {styles.viewInputRecompensas}>
                             <View style = {styles.recompensasContainer}>
                             <TextInput style = {styles.recompensasInput}/></View>
@@ -76,17 +79,18 @@ export function ModalAddTarefa({fecharModal}){
                             <Text style={[styles.txtCategoria, {color: '#3379f3'}]}>ESTUDOS</Text></View></TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.btnSalvar} onPress={ fecharModal}>
+                    <TouchableOpacity style={styles.btnSalvar} onPress={()=>navigation.navigate('ListaTarefas')}>
                         <Text style={styles.textSalvar}>Criar Tarefa</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </View>
+        </SafeAreaView>
     )
 } 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "rgba(24, 24, 24, 0.6)",
+        //backgroundColor: "rgba(24, 24, 24, 0.6)",
         height: '100%',
         width: '100%',
         alignSelf: 'center',

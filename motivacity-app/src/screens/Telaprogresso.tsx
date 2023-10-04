@@ -72,11 +72,6 @@ export function Telaprogresso(){
             <Text style={styles.titulo}>Sua agenda</Text>
             <Text style={styles.subtitulo}>suas tarefas para o dia!</Text>
           </View>
-          <TouchableOpacity style = {styles.addTarefas} onPress={abrirAddTarefas}>
-            <Text style = {styles.txtAddTarefas}>
-              Adicionar{'\n'}Tarefas
-            </Text>
-          </TouchableOpacity>
         </View>
         <View style={styles.conteudo}>
           <Text style={styles.procurar}>
@@ -114,6 +109,13 @@ export function Telaprogresso(){
       </SafeAreaView>
   );
 };
+
+/*<TouchableOpacity style = {styles.addTarefas} onPress={abrirAddTarefas}>
+            <Text style = {styles.txtAddTarefas}>
+              Adicionar{'\n'}Tarefas
+            </Text>
+          </TouchableOpacity>
+          */ 
 //<ScrollView style={{backgroundColor: 'red',}}></ScrollView>
 const styles = StyleSheet.create({
   container: {
