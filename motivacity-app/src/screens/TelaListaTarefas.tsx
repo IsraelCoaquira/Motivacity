@@ -16,63 +16,63 @@ export function TelaListaTarefas({navigation, route}){
               </TouchableOpacity>
               <Text style = {styles.viewTitulo}>{route.params.titulo}</Text>
               <Text style = {styles.viewSubTitulo}>{route.params.subtitulo}</Text>
-                <TouchableOpacity style={styles.btnAddTarefas} onPress={()=>navigation.navigate('AddTarefas')}>
+                <TouchableOpacity style={[styles.btnAddTarefas, {backgroundColor: route.params.btnAddTarefasbg}]} onPress={()=>navigation.navigate('AddTarefas')}>
                   <Text style={styles.txtAddTarefas}>Adicionar {'\n'}Tarefas</Text>
                 </TouchableOpacity>
               </View>
-            </View>
+            </View> 
             <View style={styles.viewblocotarefas}>
                 <ScrollView>
-                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
                     <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Jogar futebol no parque                   Fácil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={styles.txtSubTarefa}>15/10/2023</Text>
-                        <Text style={styles.txtSubTarefa}>14h00-15h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>15/10/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>14h00-15h00</Text>
                       </View>
-                      <TouchableOpacity style = {styles.btnConcluir}>
+                      <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
                         Concluir
                         </Text>
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: '', borderLeftColor: '',}]}>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
                     <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Fazer exercícios de Yoga               Média</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={styles.txtSubTarefa}>16/10/2023</Text>
-                        <Text style={styles.txtSubTarefa}>16h00-17h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>16/10/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>16h00-17h00</Text>
                       </View>
-                      <TouchableOpacity style = {styles.btnConcluir}>
+                      <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
                         Concluir
                         </Text>
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
                     <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Exercitar os Bíceps                              Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={styles.txtSubTarefa}>17/10/2023</Text>
-                        <Text style={styles.txtSubTarefa}>11h00-12h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>17/10/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>11h00-12h00</Text>
                       </View>
-                      <TouchableOpacity style = {styles.btnConcluir}>
+                      <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
                         Concluir
                         </Text>
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
                     <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Vencer campeonato de Vôlei       Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={styles.txtSubTarefa}>18/10/2023</Text>
-                        <Text style={styles.txtSubTarefa}>20h00-21h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>18/10/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>20h00-21h00</Text>
                       </View>
-                      <TouchableOpacity style = {styles.btnConcluir}>
+                      <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
                         Concluir
                         </Text>

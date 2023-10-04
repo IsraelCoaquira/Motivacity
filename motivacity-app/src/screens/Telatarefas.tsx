@@ -17,7 +17,7 @@ SplashScreen.preventAutoHideAsync();
 
 export function Telatarefas({navigation}){
 
-   
+    
 
   const [fontsLoaded, fontError] = useFonts({
     'Poppins': require('../../assets/fonts/Poppins-Regular.ttf'),
@@ -33,7 +33,11 @@ export function Telatarefas({navigation}){
   if (!fontsLoaded && !fontError) {
     return null;
   }
-
+/**
+ * <TouchableOpacity style = {styles.btnAdd}>
+            <FontAwesome name="calendar-o" style = {styles.icons}/>
+          </TouchableOpacity>
+ */
     return (
         <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
           <View>
@@ -42,8 +46,6 @@ export function Telatarefas({navigation}){
           <View><Text style={styles.textTitulo}>Minhas Tarefas</Text>
           <Text style={styles.textSubtitulo}>Tarefas em andamento</Text>
           </View>
-          <TouchableOpacity style = {styles.btnAdd}>
-            <FontAwesome name="calendar-o" style = {styles.icons}/></TouchableOpacity>
           </View>
           <View style={styles.viewOpcoes}>
             <TouchableOpacity>
@@ -68,7 +70,10 @@ export function Telatarefas({navigation}){
                 backgroundCima: '#5da32e',
                 itemsBackground: '#cbffa8',
                 itemcolorTxt: '#5da32e',
+                itemcolorSubTxt: '#119e11',
                 itemBordatxt:'#119e11',
+                btnAddTarefasbg: '#007700',
+                btnConcluirbg: '#119e11',
                 titulo: 'Esportes',
                 subtitulo: 'Minhas tarefas esportivas!',
               });}}>
@@ -82,7 +87,10 @@ export function Telatarefas({navigation}){
                 backgroundCima: '#b51515',
                 itemsBackground: '#f79c9c',
                 itemcolorTxt: '#b51515',
-                itemBordatxt:'#a41111',
+                itemcolorSubTxt: '#a41111',
+                itemBordatxt:'#e43535',
+                btnAddTarefasbg: '#800f0f',
+                btnConcluirbg: '#d32a2a',
                 titulo: 'Desafios',
                 subtitulo: 'Minhas tarefas desafiadoras!',
               });}}>
@@ -96,23 +104,29 @@ export function Telatarefas({navigation}){
                 imagendereco: require('../assets/images/Esportes2.png'),
                 Background: "#fff",
                 backgroundCima: '#ed7d31',
-                itemsBackground: '#feae78',
-                itemcolorTxt: '#ed7d31',
+                itemsBackground: '#ffc6a0',
+                itemcolorTxt: '#c75f1a',
+                itemcolorSubTxt: '#cc641d',
                 itemBordatxt:'#cc641d',
+                btnAddTarefasbg: '#9c3f00',
+                btnConcluirbg: '#cc641d',
                 titulo: 'Pessoais',
                 subtitulo: 'Minhas tarefas pessoais!',
               });}}>
               <Text style={styles.textButtons}>Pessoais</Text>
               <Text style={styles.subTextButtons}>1 em andamento</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#5e97fd'}]}
+            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#3c76da'}]}
               onPress={() => {navigation.navigate('ListaTarefas', {
                 imagendereco: require('../assets/images/Esportes2.png'),
                 Background: "#fff",
-                backgroundCima: '#5e97fd',
-                itemsBackground: '#99d7ff',
+                backgroundCima: '#3c76da',
+                itemsBackground: '#bce4ff',
                 itemcolorTxt: '#5e97fd',
-                itemBordatxt:'#2d61bf',
+                itemcolorSubTxt: '#2d61bf',
+                itemBordatxt:'#417ee7',
+                btnAddTarefasbg: '#0b3a91',
+                btnConcluirbg: '#417ee7',
                 titulo: 'Estudos',
                 subtitulo: 'Meus estudos para hoje',
               });}}>

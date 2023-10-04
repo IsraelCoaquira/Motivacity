@@ -7,17 +7,14 @@ import { ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Modaloja } from "./Telaloja";
 import { Routes } from "../routes/index";
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
-export function Telajogo(){
-  const [lojaVisible, setLojaVisible] = useState(false);
-    const abrirLoja = () =>{setLojaVisible(true)}
+export function Telajogo({navigation}){
+
     
-  
+   
     return (
         <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
-          <Modal style={styles.modal}visible={lojaVisible} animationType="fade" transparent={true}>
-        <Modaloja fecharLoja = {() => setLojaVisible(false)}/>
-        </Modal>
       <ScrollView style={styles.scrollCabecalho} horizontal>
       <View style={styles.viewCabecalho}><Image 
       source={require('../assets/images/BgCidade.png')}
@@ -25,7 +22,7 @@ export function Telajogo(){
       </View></ScrollView>
       <View style={styles.viewBotoes}>
       <View style={styles.viewCoins}><Text style={styles.text}>$ 2000,00</Text></View>
-      <TouchableOpacity onPress={abrirLoja}>
+      <TouchableOpacity onPress={()=>navigation.navigate('LojaJogo')}>
         <View style={styles.viewBtnLoja}>
         <Image style={styles.viewIconLoja} source={require('../assets/images/btcompras.png')}></Image>
         </View>
@@ -56,8 +53,8 @@ const styles = StyleSheet.create({
     position:'absolute',
     flex: 1,
 
-    height:'100%',
-    width: '100%',
+    height:SCREEN_HEIGHT*1.025,
+    width: SCREEN_WIDTH,
     backgroundColor: '#5cc065'
   },
   viewCabecalho: {
@@ -66,15 +63,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     height:800,
     //height:'100%',
-    width: 1000,
+    width: 980,
     justifyContent: 'center',
   },
   
   imageCabecalho:{
-    resizeMode: 'cover',
-    height: '95%',
+    
+    height: SCREEN_HEIGHT*1.025,
     //height: '100%',
-    width: '100%',
+    width: SCREEN_WIDTH*2.5,
   },
   scrollView: {
     backgroundColor: '#fff',

@@ -2,19 +2,20 @@ import { View, TouchableOpacity, Text, KeyboardAvoidingView, Image, TextInput, S
 import React, { useState } from 'react'
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { SCREEN_HEIGHT } from "../constants/Screen";
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 
 
-export function Modaloja({fecharLoja}){
+export function Modaloja({navigation, route}){
 
     return(
+        <SafeAreaView style={styles.container}>
         <View style = {styles.tela}> 
         <KeyboardAvoidingView>
             <View style = {styles.Quadradinho}>
                 <View style={styles.viewTitulo}>
                 <View style = {styles.areaTitulo}>
-                    <TouchableOpacity style={styles.btn} onPress={fecharLoja}>
+                    <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Jogo')}>
                         <AntDesign name="caretleft" style={styles.btnVoltar}/>
                     </TouchableOpacity>
                 <Text style = {styles.Titulo}>LOJA</Text>
@@ -117,11 +118,17 @@ export function Modaloja({fecharLoja}){
             </View>
             </KeyboardAvoidingView>
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
+    container:{
+        width: SCREEN_WIDTH,
+        height: SCREEN_HEIGHT,
+        paddingTop: StatusBar.currentHeight,
+    },
     tela:{
-        backgroundColor: "green",
+        //backgroundColor: "green",
         height: '100%',
         width: '100%',
         //alignSelf: 'center',
@@ -129,13 +136,13 @@ const styles = StyleSheet.create({
     },
     Quadradinho:{
         //borderRadius: 32,
-        backgroundColor: "#FFF",
+        //backgroundColor: "green",
         //marginBottom: "7%",
         //alignItems: 'center',
         alignSelf: 'center',
         alignItems:'center',
         //justifyContent: 'center',
-        height: SCREEN_HEIGHT,
+        height: SCREEN_HEIGHT*1.01655,
         width: '100%',
     },
     areaTitulo:{
@@ -167,7 +174,7 @@ const styles = StyleSheet.create({
     produtosView:{
         //backgroundColor: 'red',
         marginTop: 10,
-        marginBottom: 90,
+        marginBottom: 70,
     },
     produtos:{
         width: '100%',
@@ -181,14 +188,14 @@ const styles = StyleSheet.create({
     },
     produtosScroll:{
         marginTop: 10,
-        height: 150,
-        width: 320,
+        height: SCREEN_HEIGHT*0.225,
+        width: SCREEN_WIDTH*0.8,
         //marginLeft: 40,
         //backgroundColor: 'blue'
     },
     produtosviewimg:{
-        height: '100%',
-        width: 150,
+        height: SCREEN_HEIGHT*0.2,
+        width: SCREEN_WIDTH*0.375,
         marginRight: 20,
         borderRadius: 40,
         //backgroundColor: 'red',

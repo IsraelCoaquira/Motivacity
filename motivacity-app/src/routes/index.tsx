@@ -4,6 +4,7 @@ import { Telajogo } from '../screens/Telajogo'
 import { Telatarefas } from "../screens/Telatarefas";
 import {Telaprogresso} from "../screens/Telaprogresso";
 import { AddTarefas } from "../assets/modal/index";
+import { Modaloja } from "../screens/Telaloja";
 import { TelaListaTarefas } from "../screens/TelaListaTarefas";
 import { createStackNavigator } from "@react-navigation/stack";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -26,6 +27,7 @@ export function Routes(){
                 <Stack.Screen name="Principais" component={Tabs}/>
                 <Stack.Screen name="ListaTarefas" component={TelaListaTarefas}/>
                 <Stack.Screen name="AddTarefas" component={AddTarefas}/>
+                <Stack.Screen name="LojaJogo" component={Modaloja}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -41,6 +43,7 @@ export function Routes(){
             <Tab.Navigator screenOptions={{
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
+                
             }}>
                 <Tab.Screen
                     name="Início"
