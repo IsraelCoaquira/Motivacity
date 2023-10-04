@@ -30,7 +30,7 @@ export function Routes(){
         </NavigationContainer>
     )
 }
-
+ 
 /*<Stack.Navigator screenOptions={{headerShown:false}}>
                 <Stack.Screen name="Início" component={Tabs}/>
                 <Stack.Screen name="ListaTarefas" component={TelaListaTarefas}/>

@@ -65,22 +65,57 @@ export function Telatarefas({navigation}){
               onPress={() => {navigation.navigate('ListaTarefas', {
                 imagendereco: require('../assets/images/Esportes2.png'),
                 Background: "#fff",
-                  
+                backgroundCima: '#5da32e',
+                itemsBackground: '#cbffa8',
+                itemcolorTxt: '#5da32e',
+                itemBordatxt:'#119e11',
+                titulo: 'Esportes',
+                subtitulo: 'Minhas tarefas esportivas!',
               });}}>
               <Text style={styles.textButtons}>Esportes</Text>
               <Text style={styles.subTextButtons}>2 em andamento</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#b54545'}]}>
+            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#b51515'}]}
+              onPress={() => {navigation.navigate('ListaTarefas', {
+                imagendereco: require('../assets/images/Esportes2.png'),
+                Background: "#fff",
+                backgroundCima: '#b51515',
+                itemsBackground: '#f79c9c',
+                itemcolorTxt: '#b51515',
+                itemBordatxt:'#a41111',
+                titulo: 'Desafios',
+                subtitulo: 'Minhas tarefas desafiadoras!',
+              });}}>
               <Text style={styles.textButtons}>Desafios</Text>
               <Text style={styles.subTextButtons}>5 em andamento</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.miniviews}>
-            <TouchableOpacity style={[styles.buttonsLeft, {backgroundColor: '#ed7d31'}]}>
+            <TouchableOpacity style={[styles.buttonsLeft, {backgroundColor: '#ed7d31'}]}
+              onPress={() => {navigation.navigate('ListaTarefas', {
+                imagendereco: require('../assets/images/Esportes2.png'),
+                Background: "#fff",
+                backgroundCima: '#ed7d31',
+                itemsBackground: '#feae78',
+                itemcolorTxt: '#ed7d31',
+                itemBordatxt:'#cc641d',
+                titulo: 'Pessoais',
+                subtitulo: 'Minhas tarefas pessoais!',
+              });}}>
               <Text style={styles.textButtons}>Pessoais</Text>
               <Text style={styles.subTextButtons}>1 em andamento</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#5e97fd'}]}>
+            <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#5e97fd'}]}
+              onPress={() => {navigation.navigate('ListaTarefas', {
+                imagendereco: require('../assets/images/Esportes2.png'),
+                Background: "#fff",
+                backgroundCima: '#5e97fd',
+                itemsBackground: '#99d7ff',
+                itemcolorTxt: '#5e97fd',
+                itemBordatxt:'#2d61bf',
+                titulo: 'Estudos',
+                subtitulo: 'Meus estudos para hoje',
+              });}}>
               <Text style={styles.textButtons}>Estudos</Text>
               <Text style={styles.subTextButtons}>0 em andamento </Text>
             </TouchableOpacity>

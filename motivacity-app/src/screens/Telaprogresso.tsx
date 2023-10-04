@@ -6,7 +6,6 @@ import { format, addHours } from 'date-fns';
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 import { horario } from "../constants/horarios";
-import { ModalAddTarefa } from "../assets/modal/index";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -55,13 +54,9 @@ LocaleConfig.locales.fr = {
 LocaleConfig.defaultLocale = "fr";
 
 export function Telaprogresso(){
-  const [addTarefasVisible, setAddTarefasVisible] = useState(false);
-    const abrirAddTarefas = () =>{setAddTarefasVisible(true)}
+
     return (
       <SafeAreaView style={styles.container} >
-        <Modal visible={addTarefasVisible} animationType="fade" transparent={true}>
-        <ModalAddTarefa fecharModal = {() => setAddTarefasVisible(false)}/>
-        </Modal>
         <View style={styles.viewVoltar}>
           <TouchableOpacity>
               <AntDesign name='left' style={styles.btn}/>
@@ -130,7 +125,7 @@ const styles = StyleSheet.create({
   //<Calendar style={styles.calendario} onDayPress={date => console.log(date)}/>
   text: {
     fontSize: 20,
-  },
+  }, 
   btn:{
     justifyContent: 'center',
     fontSize: 28,

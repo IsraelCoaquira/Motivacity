@@ -6,16 +6,16 @@ import { AntDesign, Feather } from "@expo/vector-icons";
 export function TelaListaTarefas({navigation, route}){
 
     const { imagendereco } = route.params;
-    return (
+    return ( 
         <SafeAreaView style={styles.container}>
             <View style={{backgroundColor: route.params.Background}}>
-            <View style={styles.viewCima}>
+            <View style={[styles.viewCima, {backgroundColor: route.params.backgroundCima}]}>
             <View style={styles.viewCabecalho}>
               <TouchableOpacity onPress={()=>navigation.navigate('Início')}>
               <AntDesign name="left" style={styles.btnVoltar}/>
               </TouchableOpacity>
-              <Text style = {styles.viewTitulo}>Esportes</Text>
-              <Text style = {styles.viewSubTitulo}>Suas tarefas esportivas!</Text>
+              <Text style = {styles.viewTitulo}>{route.params.titulo}</Text>
+              <Text style = {styles.viewSubTitulo}>{route.params.subtitulo}</Text>
                 <TouchableOpacity style={styles.btnAddTarefas} onPress={()=>navigation.navigate('AddTarefas')}>
                   <Text style={styles.txtAddTarefas}>Adicionar {'\n'}Tarefas</Text>
                 </TouchableOpacity>
@@ -23,8 +23,8 @@ export function TelaListaTarefas({navigation, route}){
             </View>
             <View style={styles.viewblocotarefas}>
                 <ScrollView>
-                  <View style={styles.itemsTarefas}>
-                    <Text style={styles.txtTarefa}>Jogar futebol no parque                   Fácil</Text>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Jogar futebol no parque                   Fácil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <Text style={styles.txtSubTarefa}>15/10/2023</Text>
@@ -37,8 +37,8 @@ export function TelaListaTarefas({navigation, route}){
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={styles.itemsTarefas}>
-                    <Text style={styles.txtTarefa}>Fazer exercícios de Yoga               Média</Text>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: '', borderLeftColor: '',}]}>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Fazer exercícios de Yoga               Média</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <Text style={styles.txtSubTarefa}>16/10/2023</Text>
@@ -51,8 +51,8 @@ export function TelaListaTarefas({navigation, route}){
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={styles.itemsTarefas}>
-                    <Text style={styles.txtTarefa}>Exercitar os Bíceps                              Difícil</Text>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Exercitar os Bíceps                              Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <Text style={styles.txtSubTarefa}>17/10/2023</Text>
@@ -65,8 +65,8 @@ export function TelaListaTarefas({navigation, route}){
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={styles.itemsTarefas}>
-                    <Text style={styles.txtTarefa}>Vencer campeonato de Vôlei       Difícil</Text>
+                  <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground}]}>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Vencer campeonato de Vôlei       Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <Text style={styles.txtSubTarefa}>18/10/2023</Text>
@@ -123,7 +123,6 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH*0.975,
     borderRadius: SCREEN_WIDTH*0.075,
     alignSelf: 'center',
-    backgroundColor: '#5da32e'
   },
   viewTitulo:{
     fontSize: SCREEN_WIDTH*0.09,
