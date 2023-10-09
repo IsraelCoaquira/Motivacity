@@ -3,7 +3,7 @@ import React, { useState, useCallback } from 'react'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 import { AntDesign, Feather } from "@expo/vector-icons";
 
-export function TelaListaTarefas({navigation, route}){
+export function TelaListaTarefas({navigation, route}: any){
 
     const { imagendereco } = route.params;
     return ( 
@@ -11,7 +11,7 @@ export function TelaListaTarefas({navigation, route}){
             <View style={{backgroundColor: route.params.Background}}>
             <View style={[styles.viewCima, {backgroundColor: route.params.backgroundCima}]}>
             <View style={styles.viewCabecalho}>
-              <TouchableOpacity onPress={()=>navigation.navigate('Início')}>
+              <TouchableOpacity onPress={()=>navigation.navigate('Inicial')}>
               <AntDesign name="left" style={styles.btnVoltar}/>
               </TouchableOpacity>
               <Text style = {styles.viewTitulo}>{route.params.titulo}</Text>

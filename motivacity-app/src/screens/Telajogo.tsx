@@ -1,18 +1,14 @@
 import { View, Text, TextInput, SafeAreaView, Image, StatusBar, Modal } from "react-native";
 import { StyleSheet } from "react-native";
 import React, {useState} from 'react'
-import { ImageViewer } from "react-native-image-zoom-viewer";
-import { FontAwesome } from "@expo/vector-icons";
+import { Feather, FontAwesome5 } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { Modaloja } from "./Telaloja";
 import { Routes } from "../routes/index";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
-export function Telajogo({navigation}){
+export function Telajogo({navigation}: any){
 
-    
-   
     return (
         <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>
@@ -20,17 +16,6 @@ export function Telajogo({navigation}){
       source={require('../assets/images/BgCidade.png')}
       style={styles.imageCabecalho}/>
       </View></ScrollView>
-      <View style={styles.viewBotoes}>
-      <View style={styles.viewCoins}><Text style={styles.text}>$ 2000,00</Text></View>
-      <TouchableOpacity onPress={()=>navigation.navigate('LojaJogo')}>
-        <View style={styles.viewBtnLoja}>
-        <Image style={styles.viewIconLoja} source={require('../assets/images/btcompras.png')}></Image>
-        </View>
-        <View style={styles.viewBtnSelecionar}>
-        <Image style={styles.viewIconLoja} source={require('../assets/images/btselecionar.png')}></Image>
-        </View>
-        </TouchableOpacity>
-      </View>
       </View>
     </SafeAreaView>
   );
@@ -39,21 +24,30 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width:  '100%',
-    paddingTop: StatusBar.currentHeight,
   },
-  modal:{
-    margin: 0,
+  iconDrawer:{
+    marginLeft: SCREEN_WIDTH*0.06,
+    marginTop: SCREEN_HEIGHT*0.025,
+    fontSize: SCREEN_WIDTH*0.06,
+    color: '#3a68ff',
+    backgroundColor: '#85a1ff',
+    borderWidth: 2,
+    borderColor: '#3a68ff',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    padding: 4,
+    borderRadius: 10
   },
   viewPagina:{
     height: '100%',
     width: '100%',
-    backgroundColor: 'red'
+    backgroundColor: 'red',
   },
   scrollCabecalho: {
     position:'absolute',
     flex: 1,
 
-    height:SCREEN_HEIGHT*1.025,
+    height:SCREEN_HEIGHT*0.921,
     width: SCREEN_WIDTH,
     backgroundColor: '#5cc065'
   },
@@ -69,7 +63,7 @@ const styles = StyleSheet.create({
   
   imageCabecalho:{
     
-    height: SCREEN_HEIGHT*1.025,
+    height: SCREEN_HEIGHT*0.92,
     //height: '100%',
     width: SCREEN_WIDTH*2.5,
   },
@@ -79,19 +73,27 @@ const styles = StyleSheet.create({
   },
   viewBotoes:{
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    alignItems: 'center',
   },
   viewCoins: {
     //backgroundColor: 'green',
-    backgroundColor: '#ffd690',
+    backgroundColor: '#ffd894',
+    flexDirection: 'row',
     borderRadius:16,
-    height:40,
-    width:140,
+    height:SCREEN_HEIGHT*0.055,
+    width:SCREEN_WIDTH*0.375,
     marginTop: 20,
-    marginLeft:20,
+    marginLeft:SCREEN_WIDTH*0.05,
+    borderWidth: 3,
+    borderColor: '#c47c00',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-between',
+    paddingHorizontal: 10
     //alignSelf: 'center',
+  },
+  moneyIcon:{
+    fontSize: 20,
+    color: '#c47c00'
   },
   viewBtnLoja: {
     //backgroundColor: 'green',
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
     //marginTop: 15,
     marginRight: 12,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-between'
     //alignSelf: 'center',
   },
   viewBtnSelecionar: {
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     //alignSelf: 'center',
   },
   text: {
-    fontSize: 28,
+    fontSize: 20,
     color: '#925d00',
   },
 });

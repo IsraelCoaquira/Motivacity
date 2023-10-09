@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text, TextInput, SafeAreaView, ScrollView, StatusBar, StyleSheet, Modal } from "react-native";
 import React, { useState, useCallback } from 'react'
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5, Feather } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -15,7 +15,7 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 SplashScreen.preventAutoHideAsync();
 
-export function Telatarefas({navigation}){
+export function Telatarefas({ route, navigation }: any){
 
     
 
@@ -33,17 +33,26 @@ export function Telatarefas({navigation}){
   if (!fontsLoaded && !fontError) {
     return null;
   }
-/**
- * <TouchableOpacity style = {styles.btnAdd}>
+ 
+<TouchableOpacity style = {styles.btnAdd}>
             <FontAwesome name="calendar-o" style = {styles.icons}/>
           </TouchableOpacity>
- */
+
     return (
         <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
           <View>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Feather name="menu" style = {styles.iconDrawer}/>
+              </TouchableOpacity>
           </View>
           <View style={styles.viewTitulo}>
-          <View><Text style={styles.textTitulo}>Minhas Tarefas</Text>
+          <View>
+            <View style={{flexDirection: 'row'}}>
+            <Text style={styles.textTitulo}>Minhas Tarefas</Text>
+            <TouchableOpacity style = {styles.btnAdd} onPress={()=>navigation.navigate('Agenda')}>
+            <FontAwesome name="calendar-o" style = {styles.icons}/>
+          </TouchableOpacity>
+            </View>
           <Text style={styles.textSubtitulo}>Tarefas em andamento</Text>
           </View>
           </View>
@@ -134,9 +143,7 @@ export function Telatarefas({navigation}){
               <Text style={styles.subTextButtons}>0 em andamento </Text>
             </TouchableOpacity>
           </View>
-          </ScrollView><View style={styles.viewRodape}>
-
-          </View>
+          </ScrollView>
     </SafeAreaView>
   ); 
 };
@@ -147,7 +154,16 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: StatusBar.currentHeight,
   },
+
+  iconDrawer:{
+    marginLeft: SCREEN_WIDTH*0.06,
+    marginTop: SCREEN_HEIGHT*0.025,
+    fontSize: SCREEN_WIDTH*0.07,
+    color: '#18438d',
+    //backgroundColor: '#000'
+  },
   textTitulo: {
+    marginTop: 0,
     fontSize: 32,
     marginLeft: 12,
     //fontWeight: 'bold',
@@ -162,7 +178,7 @@ const styles = StyleSheet.create({
   },
   
   viewTitulo: {
-    marginTop: 20,
+    marginTop: 0,
     backgroundColor: '#fff',
     padding: 10,
     flexDirection: 'row',
@@ -206,9 +222,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins'
         }, 
   viewConteudo: {
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     flex:1,
-    marginTop: 0,
   },
   miniviews: {
     backgroundColor: '#fff',
@@ -269,7 +284,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btnAdd: {  
-    marginTop: 14,
+    marginTop: 0,
     marginLeft: 60,
     borderRadius: 20,  
     backgroundColor: '#97b6ee',
@@ -285,10 +300,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent:'center'
     }, 
-    viewRodape: {
-      backgroundColor: '#ffffff',
-//      justifyContent: 'flex-end',  
-      height: 70,
-      width: "100%"  
-    },
+
 });

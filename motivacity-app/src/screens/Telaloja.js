@@ -13,14 +13,11 @@ export function Modaloja({navigation, route}){
         <View style = {styles.tela}> 
         <KeyboardAvoidingView>
             <View style = {styles.Quadradinho}>
-                <View style={styles.viewTitulo}>
-                <View style = {styles.areaTitulo}>
-                    <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Jogo')}>
-                        <AntDesign name="caretleft" style={styles.btnVoltar}/>
-                    </TouchableOpacity>
-                <Text style = {styles.Titulo}>LOJA</Text>
-                </View>
-                </View>
+                <Image source={require("../assets/images/shopCortina4.png")} 
+                    style={{
+                        height: SCREEN_HEIGHT*0.135, 
+                        width: SCREEN_WIDTH, 
+                        marginTop: SCREEN_HEIGHT*0}}/>
                 <View style={styles.produtosView}>
                     <ScrollView style={styles.produtos}>
                 
@@ -125,7 +122,6 @@ const styles = StyleSheet.create({
     container:{
         width: SCREEN_WIDTH,
         height: SCREEN_HEIGHT,
-        paddingTop: StatusBar.currentHeight,
     },
     tela:{
         //backgroundColor: "green",
@@ -136,40 +132,34 @@ const styles = StyleSheet.create({
     },
     Quadradinho:{
         //borderRadius: 32,
-        //backgroundColor: "green",
+        backgroundColor: "#858585",
         //marginBottom: "7%",
         //alignItems: 'center',
         alignSelf: 'center',
         alignItems:'center',
         //justifyContent: 'center',
-        height: SCREEN_HEIGHT*1.01655,
-        width: '100%',
-    },
-    areaTitulo:{
-        //backgroundColor: 'green',
-        flexDirection:'row',
-        marginHorizontal:30,
-        marginTop: 10,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    viewTitulo:{
-        //backgroundColor: 'green',
-        height: 60,
-        justifyContent:'center',
+        height: SCREEN_HEIGHT*0.9325,
         width: '100%',
     },
     btnVoltar:{
         fontSize: 50,  
-        color: '#09275a',
+        color: '#c47c00',
         //backgroundColor: '#e74e4e',
         borderRadius:20,
     },
     Titulo:{
-        fontSize: 40,  
-        color: '#09275a',
+        fontSize: 36,  
+        color: '#ffeed0',
+        backgroundColor: '#f1a21a',
+        paddingHorizontal: 10,
+        borderRadius: SCREEN_WIDTH*0.04,
+        borderWidth: 4,
+        textAlign: "center",
+        borderColor: '#c47c00',
+        textAlignVertical: 'center',
         fontWeight: 'bold',
-        marginRight: 110
+        position: 'absolute',
+        marginTop: SCREEN_HEIGHT*0.1
     },
     produtosView:{
         //backgroundColor: 'red',

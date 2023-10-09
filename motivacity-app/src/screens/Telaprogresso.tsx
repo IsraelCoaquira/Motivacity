@@ -53,12 +53,12 @@ LocaleConfig.locales.fr = {
 
 LocaleConfig.defaultLocale = "fr";
 
-export function Telaprogresso(){
+export function Telaprogresso({navigation}: any){
 
-    return (
+    return ( 
       <SafeAreaView style={styles.container} >
         <View style={styles.viewVoltar}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('Inicial')}>
               <AntDesign name='left' style={styles.btn}/>
             </TouchableOpacity>
         </View>

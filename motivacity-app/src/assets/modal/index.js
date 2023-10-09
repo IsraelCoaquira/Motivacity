@@ -26,7 +26,7 @@ export function AddTarefas({navigation, route}){
 
             <View style = {styles.Quadradinho}>
                 <View style={styles.ViewCabeçalho}>
-                <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Início'
+                <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Inicial'
                 )}>
                         <AntDesign name='left' style={styles.btn}/>
                     </TouchableOpacity>
