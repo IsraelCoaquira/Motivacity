@@ -14,7 +14,7 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 
 SplashScreen.preventAutoHideAsync();
-
+ 
 export function Telatarefas({ route, navigation }: any){
 
     
