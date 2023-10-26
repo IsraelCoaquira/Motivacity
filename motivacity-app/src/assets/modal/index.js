@@ -1,29 +1,13 @@
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from "react-native";
-import useStorage from "../../hooks/useStorage";
-import { MMKV } from "react-native-mmkv";
 import React,{ useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
-//KeyboardAvoidingView
 
 export function AddTarefas({navigation, route}){
-    //const { saveItem } = useStorage();
-//    const { nomeTarefa, setNomeTarefa} = useState()
-//    const { prazoTarefa, setPrazoTarefa} = useState()
-//    const { descTarefa, setDescTarefa} = useState()
-    
-    //function salvarTarefa(){
-    //    storage.set('user', JSON.stringify((nomeTarefa, prazoTarefa, descTarefa)));
-    //}
-
-//<TextInput style = {styles.Input} placeholder="Nome da tarefa" onChangeText={setNomeTarefa}></TextInput>
-                //<TextInput style = {styles.Input} placeholder="Prazo para tarefa" onChangeText={setNomeTarefa}></TextInput>
-                //<TextInput style = {styles.Input} placeholder="Descrição tarefa" onChangeText={setNomeTarefa}></TextInput>
-
     return(
         <SafeAreaView style={styles.container}>
         <View style = {styles.container}>
-
+ 
             <View style = {styles.Quadradinho}>
                 <View style={styles.ViewCabeçalho}>
                 <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Inicial'
@@ -109,7 +93,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#363953'
     },
-    btn:{
+    btn:{ 
         justifyContent: 'center',
         //backgroundColor: "green",
         fontSize: 24,
@@ -198,7 +182,7 @@ const styles = StyleSheet.create({
         borderBottomColor: '#9699aa', // Define a cor da borda inferior
         backgroundColor: 'transparent', // Define o fundo como transparente
         paddingVertical: "6%", // Espaçamento interno horizontal
-    },
+    }, 
     inicioInput:{
         fontSize: 16,
         fontWeight:'bold',

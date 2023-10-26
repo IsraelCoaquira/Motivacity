@@ -5,7 +5,6 @@ import { AntDesign, Feather } from "@expo/vector-icons";
 
 export function TelaListaTarefas({navigation, route}: any){
 
-    const { imagendereco } = route.params;
     return ( 
         <SafeAreaView style={styles.container}>
             <View style={{backgroundColor: route.params.Background}}>
@@ -18,7 +17,7 @@ export function TelaListaTarefas({navigation, route}: any){
               <Text style = {styles.viewSubTitulo}>{route.params.subtitulo}</Text>
                 <TouchableOpacity 
                   style={[styles.btnAddTarefas, {backgroundColor: route.params.btnAddTarefasbg}]} 
-                  onPress={()=>navigation.navigate('ListaTarefas')}>
+                  onPress={()=>navigation.navigate('AddTarefas')}>
                   <Text style={styles.txtAddTarefas}>Adicionar {'\n'}Tarefas</Text>
                 </TouchableOpacity>
               </View>
@@ -66,7 +65,7 @@ export function TelaListaTarefas({navigation, route}: any){
                         </Text>
                       </TouchableOpacity>
                     </View>
-                  </View>
+                  </View> 
                   <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
                     <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Vencer campeonato de Vôlei       Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
