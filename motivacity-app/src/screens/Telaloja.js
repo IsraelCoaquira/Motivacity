@@ -18,7 +18,7 @@ export function Modaloja({navigation, route}){
                     <ScrollView style={styles.produtos}>
                 
                 <Text style = {[styles.produtosTitulo, {marginTop: SCREEN_HEIGHT*0.085}]}>Residêncial</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#bfe1e2'}]}>
                         <TouchableOpacity>
                             <Text style = {styles.btnTxtComprar}><FontAwesome5 name="coins"/>   2 000</Text>
@@ -58,7 +58,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Comercial</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#c0e2bf'}]}>
                         <TouchableOpacity>
                             <Text style = {styles.btnTxtComprar}><FontAwesome5 name="coins"/> 2 000</Text>
@@ -98,7 +98,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Industrial</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#e2d3bf'}]}>
                         <Image style = {styles.produtosimg} source={require('../assets/images/loja5.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#e2d3bf'}]}>
@@ -114,7 +114,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Lazer e Turismo</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#feffd3'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#feffd3'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#feffd3'}]}><Image style = {styles.produtosimg}/></View>
@@ -124,7 +124,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Agricultura</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#e3adcb'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#e3adcb'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#e3adcb'}]}><Image style = {styles.produtosimg}/></View>
@@ -134,7 +134,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Transporte</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#ade3ca'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#ade3ca'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#ade3ca'}]}><Image style = {styles.produtosimg}/></View>
@@ -144,7 +144,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Infraestrutura</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#d9a1f3'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#d9a1f3'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#d9a1f3'}]}><Image style = {styles.produtosimg}/></View>
@@ -154,7 +154,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Educação e saúde</Text>
-                <ScrollView style={styles.produtosScroll} horizontal>
+                <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#f77171'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#f77171'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#f77171'}]}><Image style = {styles.produtosimg}/></View>
@@ -164,7 +164,7 @@ export function Modaloja({navigation, route}){
                 </ScrollView>
                 
                 <Text style = {styles.produtosTitulo}>Energia</Text>
-                <ScrollView style={[styles.produtosScroll, {marginBottom: SCREEN_HEIGHT*0.025}]} horizontal>
+                <ScrollView style={[styles.produtosScroll, {marginBottom: SCREEN_HEIGHT*0.025}]} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#b3b3dd'}]}><Image style = {styles.produtosimg}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#b3b3dd'}]}><Image style = {styles.produtosimg} source={require('../assets/images/Casa1.png')}/></View>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#b3b3dd'}]}><Image style = {styles.produtosimg}/></View>
@@ -270,12 +270,12 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH*0.8,
         alignSelf: 'center',
         //marginLeft: 40,
-       // backgroundColor: 'blue'
+        //backgroundColor: 'blue'
     },
     produtosviewimg:{
         height: SCREEN_HEIGHT*0.2,
         width: SCREEN_WIDTH*0.8,
-        marginRight: 20,
+        
         borderRadius: 20,
         borderWidth: 6,
         borderColor: '#926215',

@@ -25,11 +25,11 @@ export function TelaListaTarefas({navigation, route}: any){
             <View style={styles.viewblocotarefas}>
                 <ScrollView>
                   <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
-                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Jogar futebol no parque                   Fácil</Text>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Estudar React Native                         Fácil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>15/10/2023</Text>
-                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>14h00-15h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>15/11/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>13h00-14h00</Text>
                       </View>
                       <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
@@ -39,10 +39,10 @@ export function TelaListaTarefas({navigation, route}: any){
                     </View>
                   </View>
                   <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
-                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Fazer exercícios de Yoga               Média</Text>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Estudar Matemática                       Média</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>16/10/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>16/11/2023</Text>
                         <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>16h00-17h00</Text>
                       </View>
                       <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
@@ -53,11 +53,11 @@ export function TelaListaTarefas({navigation, route}: any){
                     </View>
                   </View>
                   <View style={[styles.itemsTarefas,{backgroundColor: route.params.itemsBackground, borderBottomColor: route.params.itemBordatxt, borderLeftColor: route.params.itemBordatxt,}]}>
-                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Exercitar os Bíceps                              Difícil</Text>
+                    <Text style={[styles.txtTarefa, {color: route.params.itemcolorTxt}]}>Estudar japônes e francês            Difícil</Text>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>17/10/2023</Text>
-                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>11h00-12h00</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>17/11/2023</Text>
+                        <Text style={[styles.txtSubTarefa, {color: route.params.itemcolorSubTxt}]}>12h00-13h00</Text>
                       </View>
                       <TouchableOpacity style = {[styles.btnConcluir, {backgroundColor: route.params.btnConcluirbg}]}>
                       <Text style={{color: '#fff', fontFamily: 'Poppins-Bold'}}>
@@ -80,11 +80,6 @@ export function TelaListaTarefas({navigation, route}: any){
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <TouchableOpacity style={styles.btnAddTarefas}>
-                    <Text style={styles.txtAddTarefas}>
-                      Adicionar Tarefas
-                    </Text>
-                  </TouchableOpacity>
                   </ScrollView>
             </View>
             </View>
@@ -168,8 +163,8 @@ const styles = StyleSheet.create({
   },
   viewblocotarefas:{
     //#cfffae
-    //backgroundColor: '#ecfdec',
-    height: SCREEN_HEIGHT*0.675,
+    backgroundColor: '#ecfdec',
+    height: SCREEN_HEIGHT*0.525,
     width: SCREEN_WIDTH*0.925,
     borderTopStartRadius: SCREEN_WIDTH*0.1,
     borderTopEndRadius: SCREEN_WIDTH*0.1,
@@ -188,7 +183,7 @@ const styles = StyleSheet.create({
   itemsTarefas:{
     marginBottom: SCREEN_HEIGHT*0.015,
     alignSelf: 'center',
-    height: SCREEN_HEIGHT*0.15,
+    height: SCREEN_HEIGHT*0.175,
     width: SCREEN_WIDTH*0.9,
     backgroundColor: '#cbffa8',
     borderLeftWidth: 5,

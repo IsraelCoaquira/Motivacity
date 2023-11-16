@@ -63,12 +63,7 @@ export function Telatarefas({ route, navigation }: any){
               <View><Text style={styles.textOptions}>Prioridades</Text>
               <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 tarefas marcadas</Text></View></View>
               </TouchableOpacity>
-            <TouchableOpacity>
-            <View style={styles.styleOpcoes}>
-              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#fff1ad", color: '#ddaa02', borderColor: '#ddaa02'}]}/>
-              <View><Text style={styles.textOptions}>Premiadas</Text>
-              <Text style={styles.subtextOptions}>Tarefas de melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
-          </View>
+            </View>
           <ScrollView style={styles.viewConteudo}>
           <View style={styles.miniviews}>
             <TouchableOpacity 
