@@ -1,14 +1,15 @@
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, Modal } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, Modal, Pressable } from "react-native";
 import React,{ useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../constants/Screen";
-import DatePicker from 'react-native-date-picker'
+import { TextInputMask } from "react-native-masked-text";
+import uudi from "react-native-uuid";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export function AddTarefas({navigation, route}){
     const [nome, setNome] = useState("");
-    const [Dificuldade, setDificuldade] = useState(1);
     const [LabelDificil, setLabelDificil] = useState("FÁCIL");
     const [Horario, setHorario] = useState("00:00 - 01:00");
     const [Categoria, setCategoria] = useState("ESPORTES")
@@ -16,6 +17,24 @@ export function AddTarefas({navigation, route}){
     const [modalhorarios, setModalhorarios] = useState(false);
     const [modaldificuldade, setModaldificuldade] = useState(false);
     
+    async function novaTarefa() {
+        const id = uudi.v4();
+        const novosDados = {
+            id,
+            nome,
+            data,
+            LabelDificil,
+            Horario,
+            Categoria
+        }
+
+    await AsyncStorage.setItem();
+
+        console.log(novosDados);
+        
+        navigation.navigate('Inicial')
+    }
+
     return(
         <SafeAreaView style={styles.container}>
         <View style = {styles.container}>
@@ -29,13 +48,26 @@ export function AddTarefas({navigation, route}){
                 <Text style = {styles.Titulo}>Criando Nova Tarefa</Text>
                 <Text style = {styles.labelNome}>NOME</Text>
                 <View style = {[styles.inputContainer, {width: 350}]}>
-                    <TextInput placeholder = "Digite seu nome" placeholderTextColor = "#9699aa" style = {styles.inputNome} value={nome} onChangeText={text=>setNome(text)}/></View>
+                    <TextInput 
+                        placeholder = "Digite um nome para a tarefa" 
+                        placeholderTextColor = "#9699aa" 
+                        style = {styles.inputNome} 
+                        value={nome} 
+                        onChangeText={text=>setNome(text)}
+                        />
+                </View>
                 <Text style = {styles.labelData}>DATA</Text>
                     <View style = {styles.viewData}>
-                        <TouchableOpacity style={styles.selectData}>
-                            <Text style={styles.txtData}>{data}</Text>
-                            
-                        </TouchableOpacity>
+                        <TextInputMask 
+                            style={styles.selectData}
+                            placeholder="Digite uma data para a tarefa"
+                            placeholderTextColor= "#9699aa"
+                            type= {"datetime"} 
+                            options={{
+                                format: 'DD/MM/YYYY'
+                            }}
+                            value={data}
+                            onChangeText={ text => setData(text)}/>
                         <AntDesign style = {styles.calendarView} name="calendar"/>
                     </View>
                 <View style={styles.ViewInput}>
@@ -123,9 +155,9 @@ export function AddTarefas({navigation, route}){
                             <Text style={[styles.txtCategoria, {color: '#3379f3'}]}>ESTUDOS</Text></View></TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.btnSalvar} onPress={()=>navigation.navigate('Inicial')}>
-                        <Text style={styles.textSalvar}>Criar Tarefa</Text>
-                    </TouchableOpacity>
+                    <Pressable style = {styles.btnSalvar} onPress={novaTarefa}>
+                            <Text style={styles.textSalvar}>Criar Tarefa</Text>
+                        </Pressable>
                 </View>
             </View>
         </View>
@@ -155,14 +187,11 @@ const styles = StyleSheet.create({
     },
     btn:{ 
         justifyContent: 'center',
-        //backgroundColor: "green",
         fontSize: 24,
         fontWeight: 'bold',
         color: '#fff',
         marginTop: '6.5%',
-        marginLeft: '1%',       
-        //marginTop: 14,
-        //marginBottom: 14,
+        marginLeft: '1%',
     },
     Titulo:{
         fontSize: 28,
@@ -174,7 +203,6 @@ const styles = StyleSheet.create({
     labelNome:{
         fontSize: 10,
         color: "#9699aa",
-        //backgroundColor: "green",
         marginTop: '6%',
         marginLeft: '5%'
     },
@@ -292,7 +320,11 @@ const styles = StyleSheet.create({
         marginTop: SCREEN_HEIGHT*0.015,
         paddingTop: SCREEN_HEIGHT*0.01,
         borderBottomWidth: 1,
-        borderBottomColor: "#bcbfca",
+        backgroundColor: 'transparent',
+        fontSize: 12,
+        color: '#bcbfca',
+        borderBottomColor: '#a7abb9',
+        fontFamily: "Poppins"
     },
     txtHorario: {
         color: "#8f9197",
@@ -301,8 +333,6 @@ const styles = StyleSheet.create({
         //backgroundColor: "#000",
         height: SCREEN_HEIGHT*0.03,
         width: SCREEN_WIDTH * 0.275,
-        //alignItems: 'center
-        //paddingLeft: SCREEN_WIDTH*0.01
     },
     TextInicio:{
         color: "#9699aa",
@@ -387,7 +417,8 @@ const styles = StyleSheet.create({
         height: SCREEN_HEIGHT*0.1,
         width: SCREEN_WIDTH*0.8,
         alignSelf: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        fontFamily: "Poppins"
     },
     
     txtCategoria:{

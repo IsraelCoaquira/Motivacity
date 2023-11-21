@@ -7,15 +7,15 @@ import { TouchableOpacity } from "react-native";
 import { Routes } from "../routes/index";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
-export function Telajogo({navigation}: any){
-
+export function Telajogo({}: any){
+    const [BgCidade, setBgCidade] = useState(require('../assets/images/Bg_Inverno.jpg'));
     return (
         <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>
-      <View style={styles.viewCabecalho}><Image 
-      source={require('../assets/images/BgCidade.png')}
-      style={styles.imageCabecalho}/>
-      </View></ScrollView>
+      <View style={styles.viewCabecalho}>
+        <Image source={BgCidade} style={styles.imageCabecalho}/>
+      </View>
+      </ScrollView>
       </View>
     </SafeAreaView>
   );

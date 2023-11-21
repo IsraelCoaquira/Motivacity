@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text, TextInput, SafeAreaView, ScrollView, StatusBar, StyleSheet, Modal } from "react-native";
 import React, { useState, useCallback } from 'react'
-import { FontAwesome, FontAwesome5, Feather } from "@expo/vector-icons";
+import { FontAwesome, MaterialCommunityIcons, Feather } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -33,11 +33,9 @@ export function Telatarefas({ route, navigation }: any){
   if (!fontsLoaded && !fontError) {
     return null;
   }
- 
-<TouchableOpacity style = {styles.btnAdd}>
-            <FontAwesome name="calendar-o" style = {styles.icons}/>
-          </TouchableOpacity>
-
+        <TouchableOpacity style = {styles.btnAdd}>
+          <FontAwesome name="calendar-o" style = {styles.icons}/>
+        </TouchableOpacity>
     return (
         <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
           <View>
@@ -57,11 +55,11 @@ export function Telatarefas({ route, navigation }: any){
           </View>
           </View>
           <View style={styles.viewOpcoes}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('AddTarefas')}>
             <View style={styles.styleOpcoes}>
-              <FontAwesome name="star" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#ff95b5", color: '#ff004e', borderColor: '#ff004e'}]}/>
-              <View><Text style={styles.textOptions}>Prioridades</Text>
-              <Text style={styles.subtextOptions}>Tarefas em prioridade - 4 tarefas marcadas</Text></View></View>
+              <MaterialCommunityIcons name="notebook-plus-outline" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#a195e7", color: '#6952ec', borderColor: '#6952ec'}]}/>
+              <View><Text style={styles.textOptions}>Criar Tarefas</Text>
+              <Text style={styles.subtextOptions}>Crie uma nova tarefa para suas listas</Text></View></View>
               </TouchableOpacity>
             </View>
           <ScrollView style={styles.viewConteudo}>
@@ -142,7 +140,14 @@ export function Telatarefas({ route, navigation }: any){
     </SafeAreaView>
   ); 
 };
-
+/**
+ <TouchableOpacity>
+            <View style={styles.styleOpcoes}>
+              <Entypo name="trophy" style = {[styles.iconsOpcoes, styles.iconsOpcoes2, {backgroundColor: "#fff1ad", color: '#ddaa02', borderColor: '#ddaa02'}]}/>
+              <View><Text style={styles.textOptions}>Premiadas</Text>
+              <Text style={styles.subtextOptions}>Tarefas de melhores prêmios - 5 tarefas marcadas</Text></View></View></TouchableOpacity>
+           
+ */
 const styles = StyleSheet.create({
   container: {
     backgroundColor:"#fff",
@@ -163,7 +168,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     //fontWeight: 'bold',
     color: '#09275a',
-    fontFamily: 'Poppins'
+    fontFamily: 'Poppins',
   },
   textSubtitulo: {
     fontSize: 14 ,
@@ -200,7 +205,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   iconsOpcoes2: {  
-    fontSize: 16,
+    fontSize: 20,
     textAlign:'center',
     textAlignVertical:'center',
     }, 

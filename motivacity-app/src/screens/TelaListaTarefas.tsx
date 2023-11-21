@@ -15,11 +15,6 @@ export function TelaListaTarefas({navigation, route}: any){
               </TouchableOpacity>
               <Text style = {styles.viewTitulo}>{route.params.titulo}</Text>
               <Text style = {styles.viewSubTitulo}>{route.params.subtitulo}</Text>
-                <TouchableOpacity 
-                  style={[styles.btnAddTarefas, {backgroundColor: route.params.btnAddTarefasbg}]} 
-                  onPress={()=>navigation.navigate('AddTarefas')}>
-                  <Text style={styles.txtAddTarefas}>Adicionar {'\n'}Tarefas</Text>
-                </TouchableOpacity>
               </View>
             </View> 
             <View style={styles.viewblocotarefas}>

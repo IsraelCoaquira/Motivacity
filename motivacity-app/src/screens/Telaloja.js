@@ -12,11 +12,9 @@ export function Modaloja({navigation, route}){
         <View style = {styles.tela}> 
         <KeyboardAvoidingView>
             <View style = {styles.Quadradinho}>
-                
                 <View style={styles.produtosView}>
                     <View style ={styles.Produtosquadrado}>
                     <ScrollView style={styles.produtos}>
-                
                 <Text style = {[styles.produtosTitulo, {marginTop: SCREEN_HEIGHT*0.085}]}>Residêncial</Text>
                 <ScrollView style={styles.produtosScroll} horizontal pagingEnabled>
                     <View style = {[styles.produtosviewimg, {backgroundColor: '#bfe1e2'}]}>
