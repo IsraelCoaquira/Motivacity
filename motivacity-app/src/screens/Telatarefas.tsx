@@ -17,7 +17,7 @@ SplashScreen.preventAutoHideAsync();
  
 export function Telatarefas({ route, navigation }: any){
 
-    
+     
 
   const [fontsLoaded, fontError] = useFonts({
     'Poppins': require('../../assets/fonts/Poppins-Regular.ttf'),

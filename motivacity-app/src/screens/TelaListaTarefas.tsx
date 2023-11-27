@@ -2,6 +2,7 @@ import { View, TouchableOpacity, Text, TextInput, SafeAreaView, ScrollView, Stat
 import React, { useState, useCallback } from 'react'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 import { AntDesign, Feather } from "@expo/vector-icons";
+import { useFocusEffect } from "@react-navigation/native";
 
 export function TelaListaTarefas({navigation, route}: any){
 

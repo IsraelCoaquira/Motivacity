@@ -5,8 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../constants/Screen";
 import { TextInputMask } from "react-native-masked-text";
 import uudi from "react-native-uuid";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import AsyncStorage, {useAsyncStorage} from "@react-native-async-storage/async-storage";
+import Toast from "react-native-toast-message";
 
 export function AddTarefas({navigation, route}){
     const [nome, setNome] = useState("");
@@ -17,7 +17,10 @@ export function AddTarefas({navigation, route}){
     const [modalhorarios, setModalhorarios] = useState(false);
     const [modaldificuldade, setModaldificuldade] = useState(false);
     
+    const { getItem, setItem } = useAsyncStorage("@savetarefas:tarefas")
+
     async function novaTarefa() {
+        try{
         const id = uudi.v4();
         const novosDados = {
             id,
@@ -28,11 +31,26 @@ export function AddTarefas({navigation, route}){
             Categoria
         }
 
-    await AsyncStorage.setItem();
+    const consulta = await getItem()
 
-        console.log(novosDados);
-        
+    const DadosAnteriores = consulta ? JSON.parse(consulta) : []
+    
+    const Dados = [...DadosAnteriores, novosDados]
+
+    await setItem(JSON.stringify(Dados));
+        Toast.show({
+            type: "success",
+            text1: "Cadastrado com sucesso!"
+        })
         navigation.navigate('Inicial')
+    }catch(error){
+        Toast.show({
+            type: "error",
+            text1: "Não foi possível cadastrar!"
+        })
+        console.log(error)
+        navigation.navigate('Inicial')
+    }
     }
 
     return(

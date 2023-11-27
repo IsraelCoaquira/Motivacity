@@ -21,7 +21,7 @@ LocaleConfig.locales.fr = {
     "Julho",
     "Agosto",
     "Setembro",
-    "Outubro",
+    "Outubro", 
     "Novembro",
     "Dezembro"
   ],
@@ -32,7 +32,7 @@ LocaleConfig.locales.fr = {
     "Abr",
     "Mai",
     "Jun",
-    "Jul.",
+    "Jul", 
     "Ago",
     "Set.",
     "Out.",
