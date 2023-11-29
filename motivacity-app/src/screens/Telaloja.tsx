@@ -5,7 +5,7 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 
 
-export function Modaloja({navigation, route}: any){
+ export function Modaloja({navigation, route}: any){
 
     return(
         <SafeAreaView style={styles.container}>

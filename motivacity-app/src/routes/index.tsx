@@ -109,7 +109,7 @@ export function Routes(){
       </TouchableOpacity>
       <View style={styles.viewCoins}>
         <FontAwesome5 name="coins" style={styles.moneyIcon}/>
-        <Text style={styles.text}>20 000</Text></View></View>
+        <Text style={styles.text}>0</Text></View></View>
             </View>
             </SafeAreaView>
         );

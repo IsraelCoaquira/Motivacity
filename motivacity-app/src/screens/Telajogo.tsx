@@ -8,7 +8,7 @@ import { Routes } from "../routes/index";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
 
 export function Telajogo({}: any){
-    const [BgCidade, setBgCidade] = useState(require('../assets/images/Bg_Inverno.jpg'));
+    const [BgCidade, setBgCidade] = useState(require('../assets/images/BgCidade2.png'));
     return (
         <SafeAreaView style={styles.container}><View style={styles.viewPagina}>
       <ScrollView style={styles.scrollCabecalho} horizontal>

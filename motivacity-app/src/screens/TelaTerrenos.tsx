@@ -6,7 +6,7 @@ import { Telajogo } from "./Telajogo";
 
 
     export function TelaTerrenos(){    
-        const [BgCidade, setBgCidade] = useState(require('../assets/images/Bg_Inverno.jpg'))
+        const [BgCidade, setBgCidade] = useState(require('../assets/images/BgCidade2.png'))
         const [selecionado, setSelecionado] = useState("classico");
         const [bgBtnClassico, setBgBtnClassico] = useState("#c6fdc6");
         const [txtBtnClassico, setTxtBtnClassico] = useState("#62da62");

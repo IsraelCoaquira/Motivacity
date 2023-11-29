@@ -11,14 +11,21 @@ import { Telaprogresso } from "./Telaprogresso";
 import { Telajogo } from "./Telajogo";
 import { useNavigation } from '@react-navigation/native';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../constants/Screen";
+import { useFocusEffect } from "@react-navigation/native";
 
 
 SplashScreen.preventAutoHideAsync();
  
 export function Telatarefas({ route, navigation }: any){
 
-     
-
+  const [listarefas, setListarefas] = useState(0)
+  
+  function novasTarefas(){
+    setListarefas(listarefas+1)
+  }
+  useFocusEffect(useCallback(()=>{
+    novasTarefas()
+  }, []))
   const [fontsLoaded, fontError] = useFonts({
     'Poppins': require('../../assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
@@ -80,7 +87,7 @@ export function Telatarefas({ route, navigation }: any){
                 subtitulo: 'Minhas tarefas esportivas!',
               });}}>
               <Text style={styles.textButtons}>Esportes</Text>
-              <Text style={styles.subTextButtons}>2 em andamento</Text>
+              <Text style={styles.subTextButtons}>0 em andamento</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#b51515'}]}
               onPress={() => {navigation.navigate('ListaTarefas', {
@@ -97,7 +104,7 @@ export function Telatarefas({ route, navigation }: any){
                 subtitulo: 'Minhas tarefas desafiadoras!',
               });}}>
               <Text style={styles.textButtons}>Desafios</Text>
-              <Text style={styles.subTextButtons}>5 em andamento</Text>
+              <Text style={styles.subTextButtons}>0 em andamento</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.miniviews}>
@@ -116,7 +123,7 @@ export function Telatarefas({ route, navigation }: any){
                 subtitulo: 'Minhas tarefas pessoais!',
               });}}>
               <Text style={styles.textButtons}>Pessoais</Text>
-              <Text style={styles.subTextButtons}>1 em andamento</Text>
+              <Text style={styles.subTextButtons}>0 em andamento</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.buttonsRight, {backgroundColor: '#3c76da'}]}
               onPress={() => {navigation.navigate('ListaTarefas', {
@@ -133,7 +140,7 @@ export function Telatarefas({ route, navigation }: any){
                 subtitulo: 'Meus estudos para hoje',
               });}}>
               <Text style={styles.textButtons}>Estudos</Text>
-              <Text style={styles.subTextButtons}>0 em andamento </Text>
+              <Text style={styles.subTextButtons}>1 em andamento </Text>
             </TouchableOpacity>
           </View>
           </ScrollView>

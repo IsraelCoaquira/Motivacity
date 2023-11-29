@@ -42,14 +42,15 @@ export function AddTarefas({navigation, route}){
             type: "success",
             text1: "Cadastrado com sucesso!"
         })
-        navigation.navigate('Inicial')
+        navigation.navigate('Inicial',{
+            nvTarefas: 1
+        })
     }catch(error){
         Toast.show({
             type: "error",
             text1: "Não foi possível cadastrar!"
         })
         console.log(error)
-        navigation.navigate('Inicial')
     }
     }
 
